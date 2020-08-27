@@ -1,0 +1,257 @@
+/* Custom Post Meta css starts here */
+.theme-custompost-option-title{
+ text-decoration: normal;
+ text-align:left;
+ 
+}
+.theme-custompost-metaboxes-table{
+ width:100%;
+}
+
+.theme-custompost-metaboxes-row {
+ display:       block;
+ padding:       10px 0;
+}
+.theme-custompost-metaboxes-row:last-child{
+   border-bottom:0 none;
+}
+.theme-custompost-metaboxes-row li{
+position:      relative;
+float:         left;
+margin-right:  15px;
+}
+.theme-custompost-metaboxes-table .theme-custompost-option-title {
+ float:      left;
+ width:      10%;
+ margin-top: 10px;
+}
+.theme-custompost-metaboxes-table .theme-custompost-option-column{
+  width:70%;
+  display: inline-block;
+}
+.theme-custompost-item-addimage , .theme-custompost-item-addvideo{
+  clear: both;
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.theme-custompost-metaboxes-table th > label, 
+.theme-custompost-metaboxes-table th > em {
+    font-weight: normal;
+}
+.theme-custompost-option-column textarea, 
+.theme-custompost-option-column input[type="text"]{
+ color:#000;
+ background: #fff;
+ border: 1px solid #eee;
+ width: 100%;
+}
+#theme_portfolio_images li:first-child{
+  width: 300px;
+}
+.theme-custompost-metaboxes-table .theme-custompost-option-column  input[type="button"]{
+ cursor: pointer;
+ padding: 5px 10px;
+}
+#set_theme_portfolio_video {
+    top: 55px;
+}
+
+.theme-custompost-metaboxes-table input[type="submit"]{
+  width:           200px;
+}
+
+.theme-custompost-option-column input{
+ color:           #fff;
+ background-color:#018392;
+ border:          0;
+ margin-right:    5px;
+}
+
+.theme-custompost-option-column input[type="text"]{
+  padding:7px;
+  border: 1px solid #ddd;
+}
+
+.theme-custompost-videos-list li{
+ float:            left;
+ margin-right:     20px;
+}
+.theme-custompost-videos-list li input{
+ display:		  block;
+ margin-top:      4px;
+}
+.theme-custompost-image-list-item  span{
+ display: block;
+}
+/* Custom Post Meta css ends here */
+
+
+/* Theme Settings page css starts here */
+.theme-settings-form .theme-settings-tabs {
+    clear: both;
+    margin-left: -27px;
+    margin-top: -70px;  
+}
+
+.theme-settings-tabs li{
+ float:			       left;
+ text-align:     center;
+ padding:        10px ; 
+ color: 		       #212121;
+ font-weight: 	  normal;
+ background-color:#ededed;
+ border:         1px solid #cccccc;
+ cursor:         pointer;
+}
+.theme-settings-tabs li.tab-active{
+ background-color:#fff;
+}
+
+.theme-settings-container {
+   border:          1px solid #cccccc;
+   background-color:#fff;
+   padding:         20px;
+   margin:          65px 0;
+   width:           94%;
+   clear:           both;
+}
+.theme-settings-form .theme-settings-tab {
+    display: block;
+}
+
+#theme_options_settings{
+  margin-left: 0;
+  height:      35px;
+  width:       100px;
+  margin-top:  20px;
+}
+.theme-settings-form {
+    width:100%;
+    padding: 0 6px;
+}
+
+.theme-settings-form .theme-settings-tabs:child-first li{
+  border-bottom: 0 none;
+}
+
+.theme-settings-form .theme-settings-tabs li.tab-active{
+ border-bottom: 0 none;
+}
+.theme-settings-form th label {
+    font-weight: normal;
+    padding:      15px 0;
+}
+.theme-settings-tab .theme-settings-form input{
+   padding:10px;
+}
+.theme-settings-tab .theme-settings-form textarea ,
+.theme-settings-tab .theme-settings-form select,
+.theme-settings-tab .theme-settings-form input{
+  width:300px;
+}
+.theme-settings-tab .theme-settings-form select{
+  height: 3em;
+}
+
+.theme-settings-tab .theme-settings-form th {
+  width:      50%;
+
+}
+.theme-settings-tab .theme-settings-form td {
+  width:      50%;
+}
+.theme-settings-tab .theme-settings-form td li{
+   margin-right:10%;
+}
+
+.theme-settings-tab .theme-settings-form tr{
+ padding:       30px 0;
+ border-bottom: 1px solid #cccccc;
+ display:       block;
+}
+.theme-settings-form input.remove {
+    width:80px;
+    cursor: pointer;
+}
+.theme-settings-form  a{
+  background-color: #018392;
+  color:            #fff;
+  padding:          10px;
+	text-decoration:none;
+}
+#theme_options_settings{
+ margin-left:	  10px;	
+}
+
+.theme-settings-form textarea{
+ width:     232px;
+ min-height:144px;
+}
+
+/* Theme Settings page css ends here */
+
+/* Map wiget css starts here */
+
+.toit-widget-map-form li label{
+ display: inline-block;
+ width: 31%;
+}
+.toit-widget-map-form li input ,.toit-widget-map-form li textarea{
+ width: 67%;
+}
+.toit-widget-map-form li input[type="checkbox"] {
+ width: 5%;
+}
+
+/* Map wiget css ends here */
+/* Newsletter wiget css start here */
+
+.toit-widget-newsletter-subscriber-list .head-newsletter{
+ text-decoration:  underline;
+}
+.toit-widget-newsletter-subscriber-list .export-data{
+ text-decoration:  none;
+ font-size:        16px;    
+}
+.toit-widget-newsletter-subscriber-list{
+ width:     40%;
+}
+.toit-widget-newsletter-subscriber-list .prev-page{
+ float:     left;
+}
+.toit-widget-newsletter-subscriber-list .next-page{
+ float:     right;
+}
+/* Newsletter wiget css ends here */
+
+/* links widget start here*/
+.toit-widget-links-form .toit-widget-links-link {
+ padding:     8px;
+ border:      1px solid #000; 
+}
+.toit-widget-links-link .toit-widget-links-field  label{
+ display:     inline-block;
+ width:       30%; 
+}
+.toit-widget-links-link .toit-widget-links-field  input {
+ width:       60%; 
+}
+/* links widget ends here*/
+
+/* Toit recent post widget css start here*/
+
+.toit-widget-form .toit-widget-fromul li label{
+ display:     inline-block; 
+ width:       31%;  
+}
+.toit-widget-form .toit-widget-fromul li input {
+  width:       67%;  
+}
+.toit-widget-form .toit-widget-fromul li select {
+ width:       35%;  
+}
+.toit-widget-form .toit-widget-fromul li input[type="checkbox"] {
+ width:       5%;
+}
+/* Toit recent post widget css ends here*/

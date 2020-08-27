@@ -1,0 +1,65 @@
+<div class="job-opening-section">
+    <div class="container">
+        <div class="job-opening-search">
+           <!--  <div class="keyword-search">
+                <label for="keyword"><i class="bhi-search"></i></label>
+                <input class="search" type="text" data-ng-change="sidebar.searchOnDelay()" data-ng-model="sidebar.SearchService.searchParams.textSearch" id="keyword" name="keyword" data-i18n-attr="{placeholder: 'sidebar.sidebarSearchPlaceholder'}"/>
+            </div> -->
+            <div class="search-job-icon icon-before">
+                <input type="text" name="search" placeholder="Search" data-ng-change="sidebar.searchOnDelay()" data-ng-model="sidebar.SearchService.searchParams.textSearch" id="keyword" name="keyword" data-i18n-attr="{placeholder: 'sidebar.sidebarSearchPlaceholder'}"/>
+            </div>
+
+            <!--
+            <div class="keyword-search">
+                <label for="companyName"><i class="bhi-search"></i></label>
+                <input class="search" type="text" data-ng-change="sidebar.searchOnDelay()" data-ng-model="sidebar.SearchService.searchParams.companyNameSearch" id="companyName" name="companyName" placeholder="Company Name Search"/>
+                <button class="clear-filter" data-ng-show="sidebar.SearchService.searchParams.companyNameSearch.length" data-ng-click="sidebar.clearSearchParamsAndLoadData('companyName');" name="clear-all">
+                    <i class="bhi-times"></i>
+                </button>
+            </div>
+            -->
+            <div class="select-wrap">
+                <label class="tab-label"></label>
+                <div class="select-field">
+                    <ui-select ng-model="sidebar.selectedLocation.selected" theme="selectize" on-select="sidebar.addOrRemoveLocation($item, $model)" search-enabled="sidebar.searchSelectDisabled" title="Choose a location">
+                        <ui-select-match placeholder="Select job location">{{$select.selected.address.city}}{{$select.selected.address.state}}</ui-select-match>
+                        <ui-select-choices repeat="location in filteredLocations = (sidebar.locations | omitFilters:'location':sidebar.SearchService.searchParams.location) | limitTo:sidebar.locationLimitTo | orderBy:'location.address.city' track by location.address.city + ',' + location.address.state">
+                            <span>{{location.address.city}}, {{location.address.state}}</span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <div class="select-wrap">
+                <label class="tab-label"></label>
+                <div class="select-field">
+                    <ui-select ng-model="sidebar.selectedType.selected" theme="selectize" on-select="sidebar.addOrRemoveEmploymentType($item, $model)" search-enabled="sidebar.searchSelectDisabled" title="Choose a job type">
+                        <ui-select-match placeholder="Select job type">{{$select.selected.employmentType}}</ui-select-match>
+                        <ui-select-choices repeat="type in filteredemploymentTypes = (sidebar.employmentTypes) | limitTo:sidebar.employmentTypeLimitTo track by $index">
+                            <span>{{type.employmentType}}</span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <div class="select-wrap">
+                <label class="tab-label"></label>
+                <div class="select-field">
+                    <ui-select ng-model="sidebar.selectedCategory.selected" theme="selectize" on-select="sidebar.addOrRemoveCategory($item, $model)" search-enabled="sidebar.searchSelectDisabled" placeholder="Select job category" title="Choose a job category">
+                        <span>isEmpty : {{$select.isEmpty()}}</span>
+                        <ui-select-match placeholder="Select job category">{{$select.selected.publishedCategory.name}}</ui-select-match>
+                        <ui-select-choices repeat="category in filteredCategories = (sidebar.categories | omitFilters:'category':sidebar.SearchService.searchParams.category) | limitTo:sidebar.categoryLimitTo track by category.publishedCategory.id">
+                            <span>{{category.publishedCategory.name}}</span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+
+            <!-- <div class="date-img">
+                <datepicker date-format="MM-dd-yyyy">
+                    <input type="text" placeholder="Select Date" ng-change="sidebar.searchOnDelay()" ng-model="sidebar.SearchService.searchParams.dateSearch"/>
+                </datepicker>
+            </div> -->
+       </div>
+   </div>
+</div>

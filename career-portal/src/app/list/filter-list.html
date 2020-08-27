@@ -1,0 +1,49 @@
+<div class="job-opening-section">
+    <!-- LIST HEADER -->
+    <!-- <h4 data-ng-if="list.SearchService.currentListData[0].publishedCategory.id == 1400734"></h4> -->
+    <div class="container">
+         <career-portal-sidebar></career-portal-sidebar>
+        <!-- <h4 data-ng-if="!list.SearchService.helper.isSearching && list.SearchService.currentListData.length">Current Openings</h4>-->
+        <!-- JOBS CONTAINER -->
+        <div class="job-opening-wrap clearfix">
+            <!-- JOBS -->
+            <div class="job-details-wrapper" data-ng-repeat="job in list.SearchService.currentListData">
+				<a class="job-details-link" href="#/jobs/{{::job.id}}">
+					<div class="job-name openings">
+						<h5>{{::job.title}}</h5>
+						<span>{{::job.address.city}}<span data-ng-if="::(job.address.city && job.address.state)">,&nbsp;</span>{{::job.address.state}}</span>
+					</div>
+					<div class="industry-details-wrapper openings clearfix">
+						<div class="industry-details">
+							<p>Industry</p>
+							<span>{{::job.publishedCategory.name}}</span>
+						</div>
+						<div class="industry-details" data-ng-show="::((job.address.city || job.address.state) && job.employmentType)">  
+							<p>Type</p>
+							<span>{{::job.employmentType}}</span>
+						</div>  
+					</div>  
+					<div class="blog-post-date openings clearfix" data-ng-if="job.dateLastPublished">
+						<p>{{'common.addedLabel' | i18n}} - {{job.dateLastPublished | displayDate}}</p>
+						<span class="bhi-arrow-right"><u>Read More</u></span>
+					</div>
+				</a>
+            </div>
+        </div>
+        <!-- NO RESULTS -->
+        <div class="no-data-message" data-ng-if="!list.SearchService.helper.isSearching && !list.SearchService.currentListData.length">
+            <h2>{{'common.noDataHeading' | i18n}}</h2>
+            <h3>{{'list.noDataMessage' | i18n}}</h3>
+            <p data-ng-if="list.SearchService.searchParams.location.length || list.SearchService.searchParams.category.length || list.SearchService.searchParams.textSearch.length">
+                <a href data-ng-click="list.clearSearchParamsAndLoadData();">{{'list.noDataResolution' | i18n}}</a>
+            </p>
+        </div>
+        <!-- LOAD MORE -->
+<!--         <div id="loading-bar-container"></div>
+ -->        <div class="load-more-wrap">
+            <p class="load-more-data btn blue-btn" data-ng-click="list.loadMoreData();" data-ng-show="list.SearchService.helper.hasMore" style="cursor: pointer;">
+                {{'list.loadMoreDataLabel' | i18n}}
+            </p>
+        </div>
+    </div>
+</div>

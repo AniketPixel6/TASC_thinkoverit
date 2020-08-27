@@ -1,0 +1,27 @@
+<div ng-hide="detail.SharedData.modalState == 'open'">
+  <!--   <div class="single-details-wrapper" >
+        <div class="container"> -->
+           
+                <div class="job-info-wrapper" data-ng-if="detail.job.isPublic && !detail.job.isDeleted && detail.job.isOpen">
+                    <h4>{{::detail.job.title}}</h4>
+                    <button class="btn green-btn apply-btn" data-ng-click="detail.applyModal()">
+                        <span>Apply Now</span>
+                    </button>
+                    <div class="job-info">
+                        <span class="location icon-before">{{::detail.job.address.city}}<span data-ng-if="::(detail.job.address.city && detail.job.address.state)">,&nbsp;</span>{{::detail.job.address.state}}</span>
+                        <span class="postedon icon-before" data-ng-if="detail.job.dateLastPublished">Posted On - <strong> {{detail.job.dateLastPublished | displayDate}}</strong></span>
+                    </div>
+                </div>  
+<!--
+                <div class="job-description" data-ng-if="detail.job.isPublic && !detail.job.isDeleted && detail.job.isOpen">
+                    <div class="clearfix">
+                        <button class="btn green-btn apply-btn" data-ng-click="detail.applyModal()">
+                            <span>Apply Now</span>
+                        </button>
+                    </div>
+                </div>-->
+            
+      <!--   </div>
+    </div> -->
+</div>
+

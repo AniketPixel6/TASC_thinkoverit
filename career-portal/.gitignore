@@ -1,0 +1,19 @@
+# Package/Dependencies
+lib/
+node_modules/
+
+# Config Files
+src/app.json
+
+# Build Output
+reports/
+
+# Transient Build Output
+.tmp/
+.sass-cache/
+
+# Others
+.DS_Store
+.idea
+.vs/
+.settings/

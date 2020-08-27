@@ -1,0 +1,39 @@
+{
+    "acceptedResumeTypes": [
+        "html",
+        "text",
+        "txt",
+        "pdf",
+        "doc",
+        "docx",
+        "rtf",
+        "odt"
+    ],
+    "companyName": "[ COMPANY NAME HERE ]",
+    "defaultLocale": "en-US",
+    "supportedLocales": [
+        "en-US",
+        "fr-FR"
+    ],
+    "minUploadSize": 4096,
+    "maxRelatedJobs": 5,
+    "maxUploadSize": 5242880,
+    "service": {
+        "batchSize": 500,
+        "corpToken": "1K4U2S",
+        "port": null,
+        "swimlane": "22",
+        "registerJobId": 3591
+    },
+    "integrations": {
+        "linkedin": {
+            "clientId": "[ CLIENTID HERE ]"
+        }
+    },
+    "defaultGridState": "list-view",
+    "eeoc": {
+        "genderRaceEthnicity": false,
+        "veteran": false,
+        "disability": false
+    }
+}

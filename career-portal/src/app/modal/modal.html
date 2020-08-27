@@ -1,0 +1,350 @@
+
+    <div  data-ng-class="{'success':!modal.showForm}">
+       
+           <div class="job-info-wrapper" data-ng-if="modal.SearchService.currentDetailData && modal.SearchService.currentDetailData.title">
+                <h4>{{ modal.SearchService.currentDetailData.title }}</h4>
+                <a class="btn blue-btn" href="javascript:;" data-ng-click="modal.closeModal(applyForm)">VIEW DETAILS</a>
+                <div class="job-info job-info-apply">
+                    <span class="location icon-before">{{ modal.SearchService.currentDetailData.address.city }}<span data-ng-if="(modal.SearchService.currentDetailData.address.city && modal.SearchService.currentDetailData.address.state)">,&nbsp;</span><strong>{{ modal.SearchService.currentDetailData.address.state }}</strong></span>
+                    <span class="postedon">Posted On - <strong>11 May 2017 </strong></span>
+                    <span class="postedon">Type - <strong>{{ ::modal.SearchService.currentDetailData.employmentType }}</strong></span>
+                </div>
+            </div>
+        <!-- MAIN CONTENT -->
+       <!--  <div class="main" data-ng-class="{'success':!modal.showForm}"> -->
+            <!-- APPLICANT FORM -->
+            <form name="applyForm" class="contact-form job-apply-form clearfix" novalidate data-ng-show="modal.showForm">
+                <!-- firstName NAME -->
+                <h4>CANDIDATE INFORMATION</h4>
+                <div class="contact-info clearfix">
+                    <div class="field-wrap clearfix">
+                        <!-- FIRST NAME -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>First Name*</label></span>
+                                <input type="text" name="firstName" value="" data-ng-model="modal.ApplyService.form.firstName" data-i18n-attr="{placeholder: 'modal.firstNamePlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.firstName.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.firstName.$error.required">{{ 'modal.firstNameValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                        <!-- LAST NAME -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Last Name*</label></span>
+                                <input type="text" name="lastName" value="" data-ng-model="modal.ApplyService.form.lastName" data-i18n-attr="{placeholder: 'modal.lastNamePlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.lastName.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.lastName.$error.required">{{ 'modal.lastNameValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field-wrap clearfix">
+    					<!-- DATE OF BIRTH -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Date of birth*</label></span>
+                                 <datepicker date-format="MMMM d, y">
+                                    <input type="text" data-i18n-attr="{placeholder: 'modal.dateOfBirthPlaceholder'}" ng-model="modal.ApplyService.form.dateOfBirth"/>
+                                </datepicker>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.dateOfBirth.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.dateOfBirth.$error.required">{{ 'modal.dateOfBirthValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                        <!-- CURRENT DESIGNATION -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Current designation*</label></span>
+                                <input type="text" name="designation" value="" data-ng-model="modal.ApplyService.form.designation" data-i18n-attr="{placeholder: 'modal.designationPlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.designation.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.designation.$error.required">{{ 'modal.designationValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field-wrap clearfix">
+                        <!-- CURRENT COMPANY -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Current company*</label></span>
+                                <input type="text" name="companyName" value="" data-ng-model="modal.ApplyService.form.companyName" data-i18n-attr="{placeholder: 'modal.companyNamePlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.companyName.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.companyName.$error.required">{{ 'modal.companyNameValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                        <!-- SELECT NATIONALITY -->
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Select nationality*</label>
+                                <select class="nice-select" name="nationality" id="eeoc-nationality" data-ng-model="modal.ApplyService.form.nationality">
+                                    <option selected value="">Select</option>
+                                    <option value="EG">Egypt</option>
+                                    <option value="IN">Indian</option>
+                                    <option value="JO">Jordan</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="PH">Philipines</option>
+                                    <option value="SA">Saudi Arabia</option>
+                                    <option value="UAE">United Arab Emirates</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="US">United States</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.nationality.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.nationality.$error.required">{{ 'modal.nationalityValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field-wrap clearfix">
+                        <!-- PASSPORT NUMBER -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span><label>Passport number (optional)</label></span>
+                                <input type="text" name="passportNumber" value="" data-ng-model="modal.ApplyService.form.passportNumber" data-i18n-attr="{placeholder: 'modal.passportNumberPlaceholder'}">
+                            </div>
+                        </div>
+                        <!-- PASSPORT VALIDITY -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Passport validity (optional)</label></span>
+                                <datepicker date-format="MM-dd-yyyy">
+                                    <input type="text" data-i18n-attr="{placeholder: 'modal.passportValidityPlaceholder'}" ng-model="modal.ApplyService.form.passportValidity"/>
+                                </datepicker>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h4>CONTACT INFORMATION</h4>
+                <div class="contact-info clearfix">
+                    <div class="field-wrap clearfix">
+                        <!-- EMAIL -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Email*</label></span>
+                                <input type="email" name="email" value="" data-ng-model="modal.ApplyService.form.email" data-i18n-attr="{placeholder: 'common.emailPlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.email.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.email.$error.required">
+                                    {{ 'modal.emailValidationRequired' | i18n }}
+                                </span>
+                                <span data-ng-show="applyForm.email.$error.email">
+                                    {{ 'modal.emailValidationFormat' | i18n }}
+                                </span>
+                            </span>
+                        </div>
+                        <!-- EMAIL OPTIONAL-->
+                        <div class="col-2">
+                            <div class="input">
+                                <span><label>Email two (optional)</label></span>
+                                <input type="email" name="emailAlternate" value="" data-ng-model="modal.ApplyService.form.emailAlternate" data-i18n-attr="{placeholder: 'modal.emailAlternatePlaceholder'}">
+                            </div>
+                            <span class="error" data-ng-show="applyForm.emailAlternate.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.emailAlternate.$error.email">
+                                    {{ 'modal.emailValidationFormat' | i18n }}
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="field-wrap clearfix">
+                        <!-- TELEPHONE -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span><label>Telephone/Mobile phone*</label></span>
+                                <input type="text" name="phone" value="" data-ng-model="modal.ApplyService.form.phone" data-i18n-attr="{placeholder: 'modal.phonePlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.phone.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.phone.$error.required">
+                                    {{ 'modal.phoneValidationRequired' | i18n }}
+                                </span>
+                                <span data-ng-show="applyForm.phone.$error.phone">
+                                    {{ 'modal.phoneValidationFormat' | i18n }}
+                                </span>
+                            </span>
+                        </div>
+                        <!-- WORK PHONE -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span><label>Work phone (optional)</label></span>
+                                <input type="text" name="alternatePhone" value="" data-ng-model="modal.ApplyService.form.alternatePhone" data-i18n-attr="{placeholder: 'modal.phoneAlternatePlaceholder'}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field-wrap clearfix">
+                        <!-- CITY -->
+                        <!-- <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>City</label></span>
+                                <input type="text" name="city" value="" data-ng-model="modal.ApplyService.form.city" data-i18n-attr="{placeholder: 'modal.cityPlaceholder'}" required>
+                            </div>
+                        </div> -->
+                        <!-- SELECT COUNTRY-->
+                        <!-- <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Select country*</label>
+                                <select class="nice-select" id="eeoc-country" data-ng-model="modal.ApplyService.form.country">
+                                    <option value="IN">India</option>
+                                    <option value="IN">UAE</option>
+                                    <option value="IN">America</option>
+                                </select>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <h4>GENERAL INFORMATION</h4>
+                <div class="contact-info clearfix">
+
+                    <div class="field-wrap clearfix">
+                        <!-- SELECT NOTICE PERIOD-->
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Notice Period*</label>
+                                <input type="text" name="period" value="" data-ng-model="modal.ApplyService.form.period" data-i18n-attr="{placeholder: 'modal.periodPlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.period.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.period.$error.required">{{ 'modal.periodValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                        <!-- SELECT EXPERIENCE -->
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Experience in Years*</label>
+                                <input type="text" name="experience" value="" data-ng-model="modal.ApplyService.form.experience" data-i18n-attr="{placeholder: 'modal.experiencePlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.experience.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.experience.$error.required">{{ 'modal.experienceValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="field-wrap clearfix">
+                    <!-- CURRENT SALARY -->
+                        <div class="col-2">
+                            <div class="input">
+                                <span class="required"><label>Desired salary in AED (Annual)*</label></span>
+                                <input type="text" name="salary" value="" data-ng-model="modal.ApplyService.form.salary" data-i18n-attr="{placeholder: 'modal.salaryPlaceholder'}" required>
+                            </div>
+                            <span class="error" data-ng-show="applyForm.salary.$touched || applyForm.$submitted">
+                                <span data-ng-show="applyForm.salary.$error.required">{{ 'modal.salaryValidation' | i18n }}</span>
+                            </span>
+                        </div>
+                    </div>
+
+                   <!--  <div class="field-wrap clearfix">
+                  
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Category*</label>
+                                <select class="nice-select" id="eeoc-category" data-ng-model="modal.ApplyService.form.category">
+                                    <option value="IN">1</option>
+                                    <option value="IN">2</option>
+                                    <option value="IN">3</option>
+                                </select>
+                            </div>
+                        </div>
+                  
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Skills*</label>
+                                <select class="nice-select" id="eeoc-skills" data-ng-model="modal.ApplyService.form.skills">
+                                    <option value="IN">1</option>
+                                    <option value="IN">2</option>
+                                    <option value="IN">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="field-wrap clearfix">
+                  
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Industry*</label>
+                                <select class="nice-select" id="eeoc-industry" data-ng-model="modal.ApplyService.form.industry">
+                                    <option value="IN">1</option>
+                                    <option value="IN">2</option>
+                                    <option value="IN">3</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="select-wrap col-2">
+                            <div class="input eeoc">
+                                <label class="tab-label">Select visa type*</label>
+                                <select class="nice-select" id="eeoc-visaType" data-ng-model="modal.ApplyService.form.visaType">
+                                    <option value="IN">1</option>
+                                    <option value="IN">2</option>
+                                    <option value="IN">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> -->
+                   
+                    <!-- UPLOAD LABEL --><span class="required"><label>Upload Resume*</label></span>
+                    <div class="upload-resume-wrapper clearfix" data-ng-if="!modal.hasAttemptedLIApply">
+                        
+                        <label class="upload-resume" for="upload-file">
+                            <div class="resume-wrap">
+                                <span class="upload-icon icon-before"></span>
+                                <span class="field-label">
+                                    {{ 'modal.resumeFilePlaceholder' | i18n }}
+                                    <!-- <a data-ng-click="modal.showTooltip(0)"><i class="bhi-question"></i></a> -->
+                                </span>
+                                <span class="error" data-ng-show="!applyForm.$submitted && modal.resumeUploadErrorMessage">
+                                    {{ modal.resumeUploadErrorMessage }}
+                                </span>
+                                <span class="error" data-ng-show="applyForm.$submitted && !modal.ApplyService.form.resumeInfo">
+                                    {{ 'modal.resumeValidation' | i18n }}
+                                </span>
+                            </div>
+                        </label>
+                        <!-- RESUME UPLOAD -->
+
+                        <div class="upload-container needsclick" data-ngf-select data-ng-model="modal.ApplyService.form.resumeInfo" data-ngf-max-size="modal.configuration.maxUploadSize" data-ngf-multiple="false" data-ngf-accept="applyForm.$submitted=false; modal.validateResume($file);"  data-ng-if="!modal.hasAttemptedLIApply" >
+                            <i data-ng-show="!modal.ApplyService.form.resumeInfo.name" class="bhi-publish"></i>
+                            <i data-ng-show="modal.ApplyService.form.resumeInfo.name" class="bhi-resume"></i>
+                            
+                            <span class="upload-text uploaded-data-title" data-ng-show="modal.ApplyService.form.resumeInfo.name">{{ modal.ApplyService.form.resumeInfo.name }}</span>
+                        </div>
+                    </div>
+                    <!-- ERROR MESSAGE -->
+                    <span class="error submit-error" data-ng-if="!modal.isSubmitting && modal.ApplyService.ajaxError">
+                        <i class="bhi-caution"></i> <span>{{ modal.ApplyService.ajaxError }}</span>
+                    </span>
+                    <div class="btn-check-wrap clearfix" data-ng-if="modal.SearchService.currentDetailData && modal.SearchService.currentDetailData.title">   
+                        <div class="field-wrap checkbox-wrap">
+                            <input type="checkbox" name="subscribe" data-ng-model="modal.ApplyService.form.confirm" ng-init="modal.ApplyService.form.confirm=true" id="subscribe-checkbox">
+                            <label for="subscribe-checkbox" class="icon-before">I want to apply for all open jobs</label>
+                        </div>  
+                    </div>
+                </div>
+            </form>
+                <!-- SUCCESS MESSAGE -->
+            <section class="success center-title success-msg-title" data-ng-if="!modal.showForm">
+                <h4>{{ modal.successMessageKey |  i18n }}</h4>
+                <h4 ng-if="modal.successSubMessageKey">{{ modal.successSubMessageKey |  i18n }}</h4>
+            </section>  
+            <!-- FOOTER -->
+            <footer data-ng-class="{'success':!modal.showForm}" class="center-title">
+               <!--  <button data-ng-show="modal.showForm" name="cancel" data-ng-click="modal.closeModal(applyForm)">{{ 'modal.cancelButton' | i18n }}</button> -->
+                <button data-ng-show="modal.showForm" name="submit" data-ng-click="modal.submit(applyForm)" data-ng-disabled="modal.isSubmitting || modal.enableSendButton(applyForm.$valid)" data-ng-class="{ 'disabled': modal.enableSendButton(applyForm.$valid) }" class="btn green-btn submit-application" value="SUBMIT APPLICATION" >
+                    <span data-ng-if="!modal.isSubmitting">
+                        {{ 'modal.sendButton' | i18n }}
+                    </span>
+                    <span data-ng-if="modal.isSubmitting">
+                        <div class="loading">
+                            {{ 'modal.submittingButton' | i18n }}
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                            <div class="loading-dot"></div>
+                        </div>
+                        
+                    </span>
+                </button>
+                <button class="success-btn btn blue-btn" data-ng-hide="modal.showForm" data-ng-if="modal.SearchService.currentDetailData && modal.SearchService.currentDetailData.title" name="ok" data-ng-click="modal.closeModal(applyForm)">{{ 'modal.okButton' | i18n }}</button>
+            </footer>
+        
+    </div>
+
+   
