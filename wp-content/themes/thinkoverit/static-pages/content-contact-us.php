@@ -15,16 +15,16 @@
 	<div class="contact-section">
 		<div class="container clearfix">
 			<div class="contact-form-section">
-				<h3>Business Enquiries</h3>
+				<h3><?php _e("Business Enquiries", 'tasc'); ?></h3>
 				<?php the_content(); ?>
 			</div>
 			<div class="location-container">
-				<h3 class="icon-before expertise-icon">Our Office</h3>
+				<h3 class="icon-before expertise-icon"><?php _e("Our Office", 'tasc'); ?></h3>
 				<div class="location-wrapper clearfix">
 					<div class="left-block">
 						<div class="location-accordian">
 							<div class="accordion-list icon-before search-input">
-								<input type="text" name="search" placeholder="Search by location">
+								<input type="text" name="search" placeholder="<?php _e("Search by location", 'tasc'); ?>">
 							</div>
 
 							<!-- <form action="" method="GET">
@@ -45,14 +45,14 @@
 										<div><?php echo $location_list['location_list_address'];?></div>
 
 										<?php if($location_list['location_list_phone_no']) { ?>
-											<span class="contact-phone">Phone: <a href="tel:<?php echo $location_list['location_list_phone_no'];?>"><?php echo $location_list['location_list_phone_no'];?></a> </span>
+											<span class="contact-phone"><?php _e("Phone", 'tasc'); ?>: <a href="tel:<?php echo $location_list['location_list_phone_no'];?>"><?php echo $location_list['location_list_phone_no'];?></a> </span>
 										<?php } ?>
 										
 										<?php if($location_list['location_list_fax_no']) { ?>
-				                            <span>Fax: <?php echo $location_list['location_list_fax_no'];?></span>
+				                            <span><?php _e("Fax", 'tasc'); ?>: <?php echo $location_list['location_list_fax_no'];?></span>
 				                        <?php } ?>
 										
-										<a href="<?php echo $location_list['location_list_share_link'];?>" target="_blank" class="share-link">Share Location</a>
+										<a href="<?php echo $location_list['location_list_share_link'];?>" target="_blank" class="share-link"><?php _e("Share Location", 'tasc'); ?></a>
 									</div>
 								</div>
 							<?php } ?>

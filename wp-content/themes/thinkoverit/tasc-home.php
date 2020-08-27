@@ -12,7 +12,104 @@ if ( have_posts() ) :
     while ( have_posts() ) : the_post();
 
 ?>
+<!-- Start  
 
+<?php// $home_slider = get_field('home_slider') ?>
+<div class="post-story-success banner-section home-slider-wrap" id="webinar_slider" >
+	<?php// foreach($home_slider as $key => $home_slide ){?>
+    <?php// if($home_slide['background_image'] && $home_slide['background_color']){?>
+		<div class="home-banner-img" style="background: <?php// echo $home_slide['background_color']; ?> url('<?php// echo $home_slide['background_image']; ?>') no-repeat top center;">
+	<?php //} elseif($home_slide['background_image']){?>
+		<div class="home-banner-img" style="background: url('<?php// echo $home_slide['background_image']; ?>') no-repeat top center;">
+        <?php// } elseif($home_slide['background_color']){?>
+            <div class="home-banner-img" style="background-color: <?php// echo $home_slide['background_color']; ?>;">
+        <?php// } else {?>
+            <div class="home-banner-img">
+        <?php// }?>
+            <div class="container story-slideshow slide home-slider clearfix">
+				<div class="slider-left">
+					<div class="slider-content">
+						<h4><?php// echo $home_slide['slider_title']; ?></h4>
+						<div class="slider-text"><?php// echo $home_slide['slider_text']; ?></div>
+					</div>
+                    <?php// if($home_slide['link_url']){?>
+                    <div class="link">
+                         <a href="<?php //echo $home_slide['link_url']; ?>" class="btn lnk-btn" id="job_roles"><?php// if($home_slide['link_text']){echo $home_slide['link_text'];}else{
+                             //echo "Visit Page";}?></a>
+                    </div>
+                     <?php// } ?>
+                    
+				</div>
+				<div class="slider-right">
+					<div class="slider-image" >
+						<?php// if($home_slide['slider_image']) {?>
+							<img src="<?php// echo $home_slide['slider_image'] ?>">								
+						<?php// }?>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	<?php// } ?>
+</div>
+
+<style> 
+
+}
+.lnk-btn{
+    border : 1px solid #fff;
+    color: #fff;
+}
+.lnk-btn:hover{
+    color: #0F90C0;
+    background-color: #fff;
+}
+.slider-text p{
+    font-size: 16px !important;
+}
+@media (max-width:768px) {
+   
+	.banner-section{
+		height: 90vh;
+	}
+	.home-slider .slider-right, .home-slider .slider-left{
+		float:none;
+		margin: 0 auto;
+	}
+	.home-slider .slider-left h2, .home-slider .slider-left p {
+		text-align: center;
+	}
+	.home-slider .slider-left h2{
+	font: normal 25px/32px "TitilliumWeb Regular", arial;
+    
+	}
+	.home-slider .slider-left p{
+		font: normal 19px/30px "TitilliumWeb Regular", arial;		
+	}
+	.home-slider .slider-right .slider-image{
+		margin: 0 auto;
+	}
+	
+}
+</style>
+
+<script>
+jQuery( document ).ready(function() {
+jQuery('#webinar_slider').slick({
+  dots: true,
+  autoplay:true,
+  arrows: true,
+  autoplaySpeed:1500,
+  slidesToShow:1,
+  slidesToScroll:1
+  });
+});
+
+</script>
+
+
+
+ end  -->
 <?php if(!get_field('disable_banner_image') ){
 
     $banner_choice = get_field_object('banner_choice'); 
@@ -30,7 +127,7 @@ if ( have_posts() ) :
     }
 
 ?>
-	<div class="banner-section home-banner">
+	<div class="banner-section home-banner" >
         <?php if($banner_value == 'Video') { ?>
             <div class="fullscreen-bg">  
                 <video class="fullscreen-bg-video" autoplay loop muted >
@@ -96,12 +193,12 @@ if ( have_posts() ) :
     						<h4 class="solution-title"><?php echo get_the_title($service); ?></h4>
     					</div>                      
     					<p><?php echo theme_the_excerpt( get_the_excerpt($service), 30); ?></p>
-    					<span class="btn blue-btn read-more">Read More</span>
+    					<span class="btn blue-btn read-more"> <?php _e("Read More", 'tasc'); ?></span>
     				</a> 
     				<?php } ?>
                 </div>
                 <div class="btn-wrap">
-                    <a href="<?php echo get_permalink( get_page_by_path( 'our-services' ) ); ?>" class="btn blue-btn read-more">View All TASC Solutions</a>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'our-services' ) ); ?>" class="btn blue-btn read-more"><?php _e("View All TASC Solutions", 'tasc'); ?></a>
                 </div>
             </div>
         </div>
@@ -131,7 +228,7 @@ if ( have_posts() ) :
                                 }
                             ?>
                             <div class="browse-<?php echo $term->slug; ?> <?php echo $jobClass; ?>">
-        						<a data-target="<?php echo $term->slug; ?>" href="javascript:;" class="btn <?php echo $btnClass; ?> <?php echo $jobClass; ?> btn-lg tab-buttons" id="<?php echo $term->slug; ?>">Browse by <?php echo $term->name; ?></a>
+        						<a data-target="<?php echo $term->slug; ?>" href="javascript:;" class="btn <?php echo $btnClass; ?> <?php echo $jobClass; ?> btn-lg tab-buttons" id="<?php echo $term->slug; ?>"><?php _e("Browse by", 'tasc'); ?> <?php echo $term->name; ?></a>
         					</div>
                         <?php } ?>
                     </div>
@@ -176,7 +273,7 @@ if ( have_posts() ) :
                     						</div>
                                             <div class="content-txt">
                                                 <p><?php echo theme_the_excerpt( get_the_excerpt($industry), 15); ?></p>
-                                                <span class="exp-detail-link">Read More</span>
+                                                <span class="exp-detail-link"><?php _e("Read More", 'tasc'); ?></span>
                                             </div>      
                                         </a>
                                     </div>
@@ -220,22 +317,53 @@ if ( have_posts() ) :
                         <h5><?php echo get_field('country_name',$geography->ID); ?></h5>
                         <strong><?php echo get_field('hover_text', $geography->ID); ?></strong>
                     </div> 
-                <?php } ?>  
+                <?php } ?> 
+					<div class="map-box box1" id="popup-eg" style=" display: none;">
+                        <h5>Egypt</h5>
+                        <strong>50+ employee outsourced in Egypt</strong>
+                    </div>
+					<div class="map-box box1" id="popup-dz" style=" display: none;">
+                        <h5>Algeria</h5>
+                        <strong>50+ employee outsourced in Algeria</strong>
+                    </div>
+					<div class="map-box box1" id="popup-jo" style=" display: none;">
+                        <h5>Jordan</h5>
+                        <strong>50+ employee outsourced in Jordan</strong>
+                    </div>
+					
+					<div class="map-box box1" id="popup-om" style=" display: none;">
+                        <h5>Oman</h5>
+                        <strong>50+ employee outsourced in Oman</strong>
+                    </div>
+					
+
+					
             </div>
             <div class="list-wrap">
                 <ul class="map-list clearfix">
                     <?php  foreach($geographies as $geography){ ?>
                     <li data-country="<?php echo get_field('county_code', $geography->ID); ?>" class="map-item" ><a href="<?php echo get_permalink($geography); ?>"><?php echo get_the_title($geography); ?></a></li>
                     <?php } ?> 
+					<li data-country="eg" class="map-item" ><a href="#">Egypt</a></li>
+					<li data-country="dz" class="map-item" ><a href="#">Algeria</a></li>
+					<li data-country="jo" class="map-item" ><a href="#">Jordan</a></li>
+					<li data-country="om" class="map-item" ><a href="#">Oman</a></li>
+					
                 </ul>
             </div>
             <div class="country-dot">
                 <?php  foreach($geographies as $geography){ ?>
                     <span class="dotimage" id="dot-<?php echo get_field('county_code', $geography->ID); ?>" ><span class="inner-circle" data-id="<?php echo get_field('county_code', $geography->ID); ?>"></span></span>
                 <?php } ?>
+				<span class="dotimage" id="dot-eg"><span class="inner-circle" data-id="eg" ></span></span>
+				<span class="dotimage" id="dot-dz"><span class="inner-circle" data-id="dz" ></span></span>
+				<span class="dotimage" id="dot-jo"><span class="inner-circle" data-id="jo" ></span></span>
+				<span class="dotimage" id="dot-om"><span class="inner-circle" data-id="om" ></span></span>
+				
+
             </div>
             <div class="map-btn">
-                <a href="<?php echo get_field('geographies_listing_link'); ?>" class="blue-btn btn lower-case">See All</a>
+                <a href="<?php echo get_field('geographies_listing_link'); ?>" class="blue-btn btn lower-case"><?php _e("See All", 'tasc'); ?></a>
             </div>
         </div>  
     </div>
@@ -245,7 +373,7 @@ if ( have_posts() ) :
     <div class="container">
         <div>
             <span class="awards-logo"></span>
-            <h3 class="icon-before award-icon">Awards</h3>
+            <h3 class="icon-before award-icon"><?php _e("Awards", 'tasc'); ?></h3>
         </div>
         <div class="awards-wrap clearfix">
             <?php 
@@ -265,14 +393,14 @@ if ( have_posts() ) :
                     </div>
                  </div>                
                 <?php } ?>
-			<div class="awards-btn"><a class="blue-btn btn lower-case" href="<?php echo site_url("our-awards"); ?>">See all awards</a></div>
+			<div class="awards-btn"><a class="blue-btn btn lower-case" href="<?php echo site_url("our-awards"); ?>"><?php _e("See all awards", 'tasc'); ?></a></div>
         </div>  
     </div>
 </div>
 
 <div class="activities-section">
     <div class="container">
-        <h3 class="icon-before csr-icon">CSR Activities</h3>
+        <h3 class="icon-before csr-icon"><?php _e("CSR Activities", 'tasc'); ?></h3>
     </div>
     <div class="activity-inner-wrap">
         <ul class="activities-list clearfix">
@@ -321,15 +449,18 @@ if ( have_posts() ) :
     <script type="text/javascript">
         jQuery(document).ready(function() {
             if(jQuery(window).innerWidth() >= 480) {
+				
                 function showMapBox(country){
                     setTimeout(function(){
 
-                        if(jQuery("#popup-"+country).length){
-                            jQuery("#popup-"+country).css("left", jQuery("#"+country).offset().left+26);
-                            var sectionHeight = jQuery('.map-section').offset().top;
-                            var actualTop = jQuery("#"+country).offset().top - sectionHeight;
-                            jQuery("#popup-"+country).css("top", actualTop+26);
-                            jQuery("#popup-"+country).toggle();
+                        if(jQuery("#popup-"+country).length){							
+							console.log(jQuery("#in").offset());
+							jQuery("#popup-"+country).css("left", jQuery("#"+country).offset().left+26);
+							var sectionHeight = jQuery('.map-section').offset().top;
+							var actualTop = jQuery("#"+country).offset().top - sectionHeight;
+							jQuery("#popup-"+country).css("top", actualTop+26);
+							jQuery("#popup-"+country).toggle();
+						
                         }
                     }, 300);
                 }
@@ -343,7 +474,9 @@ if ( have_posts() ) :
                 }
 
                 jQuery('.dotimage .inner-circle').mouseenter(function() {
+					
                     var currentCountry = jQuery(this).attr('data-id');
+					console.log(currentCountry);
                     jQuery('li.map-item[data-country="' + currentCountry + '"]').addClass('active-country');
 
                     showMapBox(currentCountry);

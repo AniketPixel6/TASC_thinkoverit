@@ -42,7 +42,7 @@
                         <a href="<?php echo get_permalink(); ?>" class="list-box">
                             <h4><?php echo get_the_title(); ?></h4>
                             <p><?php echo theme_the_excerpt( get_the_excerpt(), 50); ?></p>
-                            <span class="btn list-box-btn lower-case">Read More</span>
+                            <span class="btn list-box-btn lower-case"><?php _e("Read More", 'tasc'); ?></span>
                         </a>
                     </a>
                 </li>

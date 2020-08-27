@@ -24,8 +24,8 @@
                     <h4><?php echo get_the_title($adviceLeft); ?></h4>
                     <p><?php echo theme_the_excerpt(get_the_excerpt($adviceLeft), 25); ?></p>
                     <div class="btn-wrap">
-                        <a href="<?php echo get_permalink($adviceLeft); ?>" class="btn blue-btn lower-case">Read More</a>
-                        <a href="<?php echo get_field('career_advice_link'); ?>" class="btn trnsprnt-btn-blue lower-case">See All</a>
+                        <a href="<?php echo get_permalink($adviceLeft); ?>" class="btn blue-btn lower-case"><?php _e("Read More", 'tasc'); ?></a>
+                        <a href="<?php echo get_field('career_advice_link'); ?>" class="btn trnsprnt-btn-blue lower-case"><?php _e("See All", 'tasc'); ?>l</a>
                     </div>  
                 </div>
             </div>

@@ -55,16 +55,14 @@ $currentPage = get_permalink( $post->ID );
 
 	$locked = get_field('report_locked', $post->ID);
 ?>
-
-<!-- 
-<div class="popup-wrap <?php // if($locked) echo "locked"; ?>" data-postid="<?php //echo get_the_ID(); ?>">
-	<div class="popup-lock">
+<div class="popup-wrap <?php if($locked) echo "locked"; ?>" data-postid="<?php echo get_the_ID(); ?>">
+	<div class="popup-lock" style="max-width: 600px;">
 		<div class="document-form-wrap">
-			<h4>Download Report</h4>
-			<?php //echo do_shortcode( '[contact-form-7 id="1441" title="Popup form" html_class="Gated Assets"]' ); ?>
+			<?php echo do_shortcode( '[contact-form-7 id="1441" title="Popup form" html_class="Gated Assets"]' ); ?>
 		</div>	
 	</div>
-</div>
- -->
+</div> 
+ 
+ 
 
 <?php get_footer();

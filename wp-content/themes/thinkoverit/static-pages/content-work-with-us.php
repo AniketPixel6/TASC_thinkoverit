@@ -63,8 +63,8 @@
 				<img src="<?php echo $banner_img; ?>" alt="Diversity"/>
 			<?php }?>
 			<ul class="diversity-num clearfix">
-				<li><strong>22</strong> <small>Nationalities</small></li>
-				<li><strong>160+</strong> <small>Employees</small></li>
+				<li><strong>22</strong> <small><?php _e("Nationalities", 'tasc'); ?></small></li>
+				<li><strong>160+</strong> <small><?php _e("Employees", 'tasc'); ?></small></li>
 			</ul>
 		</div>
 	</div>
@@ -144,7 +144,7 @@
 			<div class="job-opening-wrap clearfix">
 			 	<main></main>	
 			</div>
-			<!-- <div class="all-jobs"><a href="<?php //echo get_permalink( get_page_by_path('job-openings')); ?>#/jobs" class="btn blue-btn">See all jobs</a></div> -->	
+			<!-- <div class="all-jobs"><a href="<?php //echo get_permalink( get_page_by_path('job-openings')); ?>#/jobs" class="btn blue-btn"><?php _e("See all jobs", 'tasc'); ?></a></div> -->	
 		</div>	
 	</div>
 </div>

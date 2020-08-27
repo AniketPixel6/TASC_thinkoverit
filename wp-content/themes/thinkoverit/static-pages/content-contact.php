@@ -14,21 +14,21 @@
 <?php if (is_array($location_lists) && count($location_lists)) { ?>
 	<div class="contact-section">
 		<div class="container clearfix">
-			<h3 class="icon-before expertise-icon">Our Office</h3>
+			<h3 class="icon-before expertise-icon"><?php _e("Our Office", 'tasc'); ?></h3>
 			<div class="location-wrapper clearfix">
 				<div class="left-block">
 					<div class="location-accordian">
 						<div class="accordion-list icon-before search-input">
-							<input type="text" name="search" placeholder="Search by location">
+							<input type="text" name="search" placeholder="<?php _e("Search by location", 'tasc'); ?>">
 						</div>
 						<?php foreach($location_lists as $key=>$location_list){ ?>
 							<div class="accordion-list <?php if ( $key == 0 ) echo 'active'; ?>">
 								<a href="tab<?php echo $key;?>" class="accord-title"><?php echo $location_list['location_list_title'];?></a>
 								<div class="accord-panel">
 									<p><?php echo $location_list['location_list_address'];?></p>
-									<span>Phone: <?php echo $location_list['location_list_phone_no'];?>, </span>
-									<span>Fax: <?php echo $location_list['location_list_fax_no'];?></span>
-									<a href="#" class="share-link">Share Location</a>
+									<span><?php _e("Phone", 'tasc'); ?>: <?php echo $location_list['location_list_phone_no'];?>, </span>
+									<span><?php _e("Fax", 'tasc'); ?>: <?php echo $location_list['location_list_fax_no'];?></span>
+									<a href="#" class="share-link"><?php _e("Share Location", 'tasc'); ?></a>
 								</div>
 							</div>
 						<?php } ?>
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="contact-form-section">
-				<h3>Contact Form</h3>
+				<h3><?php _e("Contact Form", 'tasc'); ?></h3>
 				<?php the_content(); ?>
 			</div>		
 		</div>

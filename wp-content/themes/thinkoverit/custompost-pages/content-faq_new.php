@@ -8,7 +8,10 @@
  */
 get_header(); 
 $postType = get_post_type();
-$categories = get_terms(array('faq_categories'));
+$categories = get_terms('faq_categories', array( 
+	'exclude'  => 207
+)
+);
 $array = [];
 ?>
 <div class="faq-section">
@@ -53,13 +56,13 @@ $array = [];
 							  			<li><a href="<?php echo get_term_link($category); ?>"><?php echo get_the_title($faq->ID); ?></a></li>
 							  		<?php } ?>
 						  		</ul>
-								<a class="faq-view-all" href="<?php echo get_term_link($category); ?>">View all questions</a>
+								<a class="faq-view-all" href="<?php echo get_term_link($category); ?>"><?php _e("View all questions", 'tasc'); ?></a>
 							</div>
 						<?php } ?>
 					</div>
 	            <?php } ?>
 	           <?php if(count($array)<1){ ?>
-	           		<h3 class="not-found">No data has been found.</h3>
+	           		<h3 class="not-found"><?php _e("No data has been found.", 'tasc'); ?></h3>
 	           <?php } ?>
 	        </div>
 	    </div>
@@ -71,12 +74,12 @@ $array = [];
 		<div class="popup-lock">
 			<a href="javascript:;" class="close-ico hide-popup">X</a>
 			<div class="document-form-wrap">
-				<h4>We want to know <span>what you think</span>.</h4>
-				<h4 class="subtitle">Please take 5 minutes to complete our survey.</h4>
-				<p>We are conducting this survey for a GCC wide salary and employment report. This report will offer a detailed look at salary and hiring trends from 2019 along with employee and employer expectations for 2020. You will receive a copy of the 2019 Salary & Employment Report on the first release.</p>
+				<h4><?php _e("We want to know ", 'tasc'); ?><span><?php _e("what you think", 'tasc'); ?></span>.</h4>
+				<h4 class="subtitle"><?php _e("Please take 5 minutes to complete our survey.", 'tasc'); ?></h4>
+				<p><?php _e("We are conducting this survey for a GCC wide salary and employment report. This report will offer a detailed look at salary and hiring trends from 2019 along with employee and employer expectations for 2020. You will receive a copy of the 2019 Salary & Employment Report on the first release.", 'tasc'); ?></p>
 				<div class=survey-btn>
-					<a class="salary-survey" href="https://www.surveymonkey.com/r/6PRCH2Q" target="_blank"><span>Employee Survey</span></a>
-					<a class="employment-survey" href="https://www.surveymonkey.com/r/66737TM" target="_blank"><span>Employer Survey</span></a>
+					<a class="salary-survey" href="https://www.surveymonkey.com/r/6PRCH2Q" target="_blank"><span><?php _e("Employee Survey", 'tasc'); ?></span></a>
+					<a class="employment-survey" href="https://www.surveymonkey.com/r/66737TM" target="_blank"><span><?php _e("Employer Survey", 'tasc'); ?></span></a>
 				</div>
 				 
 			</div>	

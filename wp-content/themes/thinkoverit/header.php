@@ -19,9 +19,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="C4HJ3fm1O2A45te3Qqx4XEKeThhnA1QWta5Bxd-vl0o" />
+	<meta property="og:image" content="https://www.tascoutsourcing.com/wp-content/themes/thinkoverit/images/tasc-logo.png">
+
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.png" />
 	<?php wp_head(); ?>
+
     
     <!-- Google Tag Manager -->
     <script>
@@ -129,6 +132,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 						) );
 					?>
 				</ul>
+                <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+                	<div class="lang-dropdown">
+                		<a href="javascript:void(0);" class="lang-selection"><?php _e("LANGUAGE", 'tasc'); ?></a>
+                        <?php dynamic_sidebar( 'sidebar-1' ); ?>
+                    </div>
+                <?php endif; ?>
 				<a href="<?php echo get_permalink( get_page_by_path('request-for-proposal')); ?>" class="request-link"></a>
 				<a href="tel:+97143588500" class="call-link"></a>
 				<a href="javascript:;" class="menu-link"></a>
@@ -156,7 +165,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</ul>
 					<div class="nav-accordian">
 						<div class="accordian-list">
-							<h3>Job seeker</h3>
+							<h3><?php _e("Job seeker", 'tasc'); ?></h3>
 							<ul class="sub-menu-list">
 								<?php
 									wp_nav_menu( array(
@@ -167,7 +176,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</ul>
 						</div>
 						<div class="accordian-list">
-							<h3>Employer</h3>
+							<h3><?php _e("Employer", 'tasc'); ?></h3>
 							<ul class="sub-menu-list">
 								<?php
 									wp_nav_menu( array(
@@ -189,7 +198,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 							</ul>
 						</div> -->
 						<div class="accordian-list">
-							<h3>About</h3>
+							<h3><?php _e("About", 'tasc'); ?></h3>
 							<ul class="sub-menu-list">
 								<?php
 									wp_nav_menu( array(
@@ -210,7 +219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</div>
 				</div>
 				<div class="follow-wrap">
-					Follow us on 
+					<?php _e("Follow us on", 'tasc'); ?> 
 					<a href="https://www.linkedin.com/company/tasc-outsourcing/" target="_blank" class="follow-link linkedin">LinkedIn</a>
 					<a href="https://www.facebook.com/Tascoutsourcing/" target="_blank" class="follow-link facebook">Facebook</a>
 				</div>
@@ -233,7 +242,7 @@ if(!get_field('disabled_banner_image') && !is_front_page()){
 			$banner = get_bloginfo('stylesheet_directory').'/images/About-Us.jpg';
 		}
 	}
-	if(is_archive('job') || is_singular('job')){
+	if((is_archive('job') || is_singular('job')) && !is_tax('testimonial_categories') ){
 		$tag='See our current job openings';
 	}else{
 		$tag = get_field('banner_tagline');	
@@ -241,7 +250,51 @@ if(!get_field('disabled_banner_image') && !is_front_page()){
 	
 ?>
 <div class="top-banner">
-	<div class="banner-section" style="background:url(<?php echo $banner; ?>) top left no-repeat;background-size: cover;"></div>
+	<!--<div class="banner-section" style="background:url(<?php // echo $banner; ?>) top left no-repeat;background-size: cover;"></div> -->
+	
+	<?php if(get_field('banner_background_image') || get_field('banner_title') || get_field('banner_background_color') ){?>
+		<div class="banner-section home-slider-wrap page-banner-wrapper">	
+			<?php if(get_field('banner_background_image') && get_field('banner_background_color')){?>
+				<div class="home-banner-img" style="background: <?php echo get_field('banner_background_color'); ?> url('<?php echo get_field('banner_background_image'); ?>') no-repeat top center;">
+			<?php } elseif(get_field('banner_background_image')){?>
+				<div class="home-banner-img" style="background: url('<?php echo get_field('banner_background_image'); ?>') no-repeat top center;">
+			<?php } elseif(get_field('banner_background_color')){?>
+				<div class="home-banner-img" style="background-color: <?php echo get_field('banner_background_color'); ?>;">
+			<?php } else {?>
+				<div class="home-banner-img">
+			<?php }?>
+		
+			<div class="container  home-slider clearfix">
+				<div class="slider-left">
+					<div class="slider-content">
+						<?php if(get_field('banner_title')){?>
+							<h4><?php echo get_field('banner_title') ?></h4>
+						<?php }?>
+						<?php if(get_field('banner_text')){?>
+							<div class="slider-text"><?php echo get_field('banner_text'); ?></div>
+						<?php }?>
+					</div>
+					<?php if(get_field('banner_button_link') && get_field('banner_button_label') ){?>
+					<div class="link">
+						 <a href="<?php echo get_field('banner_button_link'); ?>" class="btn blue-btn" ><?php echo get_field('banner_button_label'); ?></a>
+					</div>
+					<?php }?>
+				</div>
+				<div class="slider-right">
+					<?php if(get_field('banner_text')){?>
+					<div class="slider-image" >
+						<img src="<?php echo get_field('banner_side_image'); ?>">
+					</div>
+					<?php }?>
+				</div>
+			</div>
+				
+			</div>
+		</div>
+	<?php }else{ ?>
+		<div class="banner-section" style="background:url('http://tasc.thinkoverit.com/wp-content/uploads/2018/03/About-Us.jpg') top left no-repeat;background-size: cover;"></div>
+	<?php }?>
+	
 	<?php if($tag){ ?>
 		<div class="banner-label">
 			<div class="container">

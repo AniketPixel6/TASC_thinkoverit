@@ -39,7 +39,7 @@
 						<li><?php echo $tag->name; ?></li>
 					<?php } ?>
 				</ul>
-				<a href="<?php echo get_permalink(); ?>" class="read-more"><u>Read More</u></a>
+				<a href="<?php echo get_permalink(); ?>" class="read-more"><u><?php _e("Read More", 'tasc'); ?></u></a>
 			</div>
 		</div>
 	</div>	

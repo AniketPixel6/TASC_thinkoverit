@@ -11,15 +11,15 @@
 						</div>
 						<div class="requirement-block">
 							<div class="requirement-inner">
-								<h5 class="bold-text">Requirement</h5> 
+								<h5 class="bold-text"><?php _e("Requirement", 'tasc'); ?></h5> 
 								<?php the_field( 'requirement' ); ?>
 								<div class="requirement-footer clearfix">
 									<div class="client">
-										<span>Client:</span>
+										<span><?php _e("Client", 'tasc'); ?>:</span>
 										<strong><?php the_field( 'client_name' ); ?></strong>
 									</div>
 									<div class="duration">
-										<span>Duration:</span>
+										<span><?php _e("Duration", 'tasc'); ?>:</span>
 										<strong><?php the_field( 'duration' ); ?></strong>
 									</div>
 
@@ -32,7 +32,7 @@
 				<?php if(get_field( 'our_approach') ) { ?>
 
 				<div class=" our-approach-sec">
-					<h5 class="bold-text"> Our Approach</h5> 
+					<h5 class="bold-text"><?php _e("Our Approach", 'tasc'); ?> </h5> 
 					<?php the_field( 'our_approach' ); ?>
 				</div>
 				<?php } ?>
@@ -46,7 +46,7 @@
 
 <div class=" diverse-block">
 	<div class="container clearfix">
-		<h5 class="diverse-heading">Diverse Nationalities recruited</h5>
+		<h5 class="diverse-heading"><?php _e("Diverse Nationalities recruited", 'tasc'); ?> </h5>
 		
 		<div class="recruited-facts-list">
 			<ul class="tag-list">
@@ -63,7 +63,7 @@
 	<div class="container">
 		
 		<div class=" quick-facts">
-			<h5 class="facts-heading">Success Quick Facts</h5>
+			<h5 class="facts-heading"><?php _e("Success Quick Facts", 'tasc'); ?></h5>
 			<?php the_field( 'success' ); ?>
 		</div>
 		<div  class="success-facts-slider">

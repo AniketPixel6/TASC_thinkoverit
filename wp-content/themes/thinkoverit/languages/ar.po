@@ -1,0 +1,488 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: _s 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
+"POT-Creation-Date: 2016-12-23 16:00+0100\n"
+"PO-Revision-Date: 2020-04-02 14:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic (Saudi Arabia)\n"
+"Language: ar-SA\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100 >= 3 "
+"&& n%100<=10 ? 3 : n%100 >= 11 && n%100<=99 ? 4 : 5;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: en_IN\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Parser: loco_parse_po"
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "عفوا! هذه الصفحة لايمكن العثور عليها."
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"يبدو أنه لم يتم العثور على أي شيء في هذا الموقع. ربما جرب أحد الروابط أدناه "
+"أو ابحث؟"
+
+#: 404.php:30
+msgid "Most Used Categories"
+msgstr "الأكثر استخداما الفئات"
+
+#. translators: %1$s: smiley
+#: 404.php:47
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "حاول البحث في المحفوظات الشهرية. %1 دولار s"
+
+#. translators: 1: title.
+#: comments.php:34
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "فكرة واحدة عن & ldquo؛٪ 1 $ s & rdquo؛"
+
+#: comments.php:67
+msgid "Comments are closed."
+msgstr "التعليقات مغلقة."
+
+#: footer.php:18
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:20
+msgid "Proudly powered by %s"
+msgstr ""
+
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:25
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:47
+msgid "Primary"
+msgstr ""
+
+#: functions.php:105
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:107
+msgid "Add widgets here."
+msgstr ""
+
+#: header.php:24
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:45
+msgid "Primary Menu"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:52
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:55
+msgid "Posted in %1$s"
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:62
+msgid "Tagged %1$s"
+msgstr ""
+
+#. translators: %s: post title
+#: inc/template-tags.php:72
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:89 template-parts/content-page.php:35
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#. translators: %s: search query.
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"عذرا! ولكن لم نجد ما يتطابق مع مفردات البحث, حاول مرة اخرة بكلمات مختلفة"
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:22 template-parts/content.php:45
+msgid "Pages:"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:34
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:40
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#. translators: %s: post date.
+#: inc/template-tags.php:29
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#. translators: %s: post author.
+#: inc/template-tags.php:35
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:59
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#: header.php:134
+msgid "LANGUAGE"
+msgstr "لغة "
+
+#: header.php:165
+msgid "Job seeker"
+msgstr "طالب عمل  "
+
+#: header.php:176
+msgid "Employer"
+msgstr "صاحب العمل "
+
+#: header.php:198
+msgid "About"
+msgstr "حول "
+
+#: header.php:219
+msgid "Follow us on"
+msgstr "حول "
+
+#: footer.php:20
+msgid "Copyright"
+msgstr "حقوق النشر "
+
+#: footer.php:20
+msgid "TASC Outsourcing. All rights reserved."
+msgstr "TASC الاستعانة بمصادر خارجية. كل الحقوق محفوظة. "
+
+#: footer.php:42
+msgid ""
+"If you’re a TASC Outsourcing employee looking to connect, call ECARE @ 800-"
+"32273 (Sun – Thu; 8 AM – 5 PM)"
+msgstr ""
+"إذا كنت أحد موظفي TASC Outsourcing الذي يتطلع إلى الاتصال ، فاتصل بـ ECARE @ "
+"800-32273 (الأحد - الخميس ؛ 8 صباحًا - 5 مساءً)"
+
+#: footer.php:42
+msgid ""
+"In case of any emergency, call Samy +971 55 954 6296 / Mazin +971 55 744 "
+"5575\", 'tasc"
+msgstr "في حالة الطوارئ اتصل بسامي +971 55954 6296 / مازن +971 55744 5575 "
+
+#: tasc-home.php:99,179 content.php:42
+msgid "Read More"
+msgstr "اقرأ أكثر "
+
+#: tasc-home.php:104
+msgid "View All TASC Solutions"
+msgstr "اعرض جميع حلول TASC"
+
+#: tasc-home.php:134
+msgid "Browse by"
+msgstr "التصفح عن طريق  "
+
+#: tasc-home.php:238
+msgid "See All"
+msgstr "التصفح عن طريق  "
+
+#: tasc-home.php:248
+msgid "Awards"
+msgstr "جائزة "
+
+#: tasc-home.php:268
+msgid "See all awards"
+msgstr "شاهد جميع الجوائز"
+
+#: tasc-home.php:275
+msgid "CSR Activities"
+msgstr "أنشطة المسؤولية الاجتماعية للشركات  "
+
+#: taxonomy-faq_categories.php:16
+msgid "How can we help you?"
+msgstr "ككيف يمكننا مساعدتك؟ "
+
+#: taxonomy-faq_categories.php:59
+msgid "No data has been found."
+msgstr "لم يتم العثور على بيانات. "
+
+#: taxonomy-faq_categories.php:74
+msgid "Scroll Top"
+msgstr "التمرير العلوي  "
+
+#: archive.php:39
+msgid "All"
+msgstr "الكل "
+
+#: content-contact-us.php:18
+msgid "Business Enquiries"
+msgstr "استفسارات الأعمال "
+
+#: content-contact-us.php:22
+msgid "Our Office"
+msgstr "مكتبنا "
+
+#: content-contact-us.php:31
+msgid "Search Blog"
+msgstr "مدونة البحث "
+
+#: content-contact-us.php:27
+msgid "Search by location"
+msgstr "البحث عن طريق الموقع "
+
+#: content-contact-us.php:48
+msgid "Phone"
+msgstr "هاتف "
+
+#: content-contact-us.php:52
+msgid "Fax"
+msgstr "فاكس "
+
+#: content-contact-us.php:52
+msgid "Share Location"
+msgstr "مشاركة الموقع "
+
+#: static-pages
+msgid "Contact Form"
+msgstr "نموذج الاتصال "
+
+#: static-pages
+msgid "Recent job openings"
+msgstr "فرص العمل الأخيرة"
+
+#: static-pages
+msgid "See all jobs"
+msgstr "عرض جميع الوظائف"
+
+#: static-pages
+msgid "Locations"
+msgstr "المواقع"
+
+#: static-pages
+msgid "Nationalities"
+msgstr "الجنسيات"
+
+#: static-pages
+msgid "Avail your free GCC hiring consultation "
+msgstr "استفد من استشارة التوظيف المجانية في دول مجلس التعاون الخليجي"
+
+#: static-pages
+msgid "Employees "
+msgstr "الموظفين"
+
+#: single-3.php:41
+msgid "Read More "
+msgstr "اقرأ أكثر"
+
+#: single-blog.php:53
+msgid "Subscribe to our blog "
+msgstr "اشترك في مدونتنا"
+
+#: single-blog.php:66
+msgid "Recommended Articles"
+msgstr "مقالات مقترحة"
+
+#: single-faq.php:31
+msgid "Previous"
+msgstr "السابق"
+
+#: single-faq.php:32
+msgid "Next"
+msgstr "التالى"
+
+#: single-job.php:49
+msgid "Posted On"
+msgstr "نشر على"
+
+#: single-job.php:53
+msgid "Details"
+msgstr "تفاصيل"
+
+#: single-job.php:57
+msgid "Industry"
+msgstr "صناعة"
+
+#: single-job.php:67
+msgid "Type"
+msgstr "اكتب"
+
+#: single-job.php:94
+msgid "Related"
+msgstr "ذات صلة"
+
+#: single-job.php:94
+msgid "Jobs"
+msgstr "وظائف"
+
+#: single-job.php:150
+msgid "Added"
+msgstr "تمت الإضافة"
+
+#: single-job.php:164 single-job.php:166
+msgid "Register your CV!"
+msgstr "سجل سيرتك الذاتية!"
+
+#: single-job.php:163
+msgid "Don't see the Job you want?"
+msgstr "لا ترى الوظيفة التي تريدها؟"
+
+#: single-success_stories.php:14
+msgid "Requirement"
+msgstr "المتطلبات"
+
+#: single-success_stories.php:18
+msgid "Client"
+msgstr "زبون"
+
+#: single-success_stories.php:22
+msgid "Duration"
+msgstr "المدة الزمنية"
+
+#: single-success_stories.php:35
+msgid "Our Approach"
+msgstr "نهجنا"
+
+#: single-success_stories.php:49
+msgid "Diverse Nationalities recruited"
+msgstr "تم تجنيد مختلف الجنسيات"
+
+#: single-success_stories.php:66
+msgid "Success Quick Facts"
+msgstr "حقائق سريعة عن النجاح"
+
+#: content-awards.php:46
+msgid "Awards Gallery"
+msgstr "معرض الجوائز"
+
+#: content-blog.php:21
+msgid "Search"
+msgstr "بحث"
+
+#: content-blog.php:24 content-employee_reports.php:20 
+#: content-employers_guide.php:20
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: content-blog.php:40
+msgid "Cancel"
+msgstr "إلغاء"
+
+#: content-blog.php:41
+msgid "Accept"
+msgstr "قبول"
+
+#: content-expertise.php:21
+msgid "Our"
+msgstr "لنا"
+
+#: content-faq-1.php:23
+msgid ""
+"You can also browse the topics below to find out what you are looking for."
+msgstr "يمكنك أيضًا تصفح الموضوعات أدناه لمعرفة ما تبحث عنه."
+
+#: content-faq-1.php:40
+msgid "View all questions"
+msgstr "عرض جميع الأسئلة"
+
+#: content-faq_new.php:62
+msgid "We want to know"
+msgstr "نريد أن نعلم"
+
+#: content-faq_new.php:62
+msgid "what you think"
+msgstr "ماذا تعتقد"
+
+#: content-faq_new.php:63
+msgid "Please take 5 minutes to complete our survey."
+msgstr "يرجى أخذ 5 دقائق لإكمال الاستبيان."
+
+#: content-faq_new.php:64
+msgid ""
+"We are conducting this survey for a GCC wide salary and employment report. "
+"This report will offer a detailed look at salary and hiring trends from 2019 "
+"along with employee and employer expectations for 2020. You will receive a "
+"copy of the 2019 Salary & Employment Report on the first release."
+msgstr ""
+"نحن نجري هذا الاستطلاع لتقرير الرواتب والعمالة في دول مجلس التعاون الخليجي. "
+"سيقدم هذا التقرير نظرة مفصلة على اتجاهات الرواتب والتوظيف لعام 2019 جنبًا "
+"إلى جنب مع توقعات الموظفين وأصحاب العمل لعام 2020. وستتلقى نسخة من تقرير "
+"الرواتب والتوظيف لعام 2019 في الإصدار الأول."
+
+#: content-faq_new.php:66
+msgid "Employee Survey"
+msgstr "مسح الموظف"
+
+#: content-faq_new.php:67
+msgid "Employer Survey"
+msgstr "مسح صاحب العمل"
+
+#: download-field.php:6
+msgid "Download Brochure"
+msgstr "تحميل الكتيب"
+
+#: download-file.php:8
+msgid ""
+"The Link to the document has been sent to your email address. You can also "
+"download it here!"
+msgstr ""
+"تم إرسال رابط المستند إلى عنوان بريدك الإلكتروني. يمكنك أيضًا تنزيله هنا!"
+
+#: download-file.php:9
+msgid "Download"
+msgstr "تحميل"
+
+#: geographies-field.php:30
+msgid "Learn More"
+msgstr "أعرف أكثر"
+
+#: geographies-field.php:4
+msgid "Current Openings"
+msgstr "الفتحات الحالية"
+
+#: 404.php:14
+msgid "404 Not Found"
+msgstr "404 غير موجود "

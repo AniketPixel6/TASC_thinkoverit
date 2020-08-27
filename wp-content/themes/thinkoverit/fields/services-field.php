@@ -24,7 +24,7 @@
 								<h3 class="icon-before success-icon"><?php echo get_the_title($child->ID); ?></h3>
 								<p><?php echo theme_the_excerpt( get_the_excerpt($child->ID)); ?></p>
 								<div class="btn-wrap staffing-btn">
-									<a href="<?php echo get_permalink($child->ID); ?>" class="btn blue-btn lower-case">Learn more</a>
+									<a href="<?php echo get_permalink($child->ID); ?>" class="btn blue-btn lower-case"><?php _e("Learn more", 'tasc'); ?></a>
 								</div>  
 							</div>
 						</div>

@@ -32,7 +32,7 @@
                                 }
                         ?>
                             <div class="browse-<?php echo $term->slug; ?> <?php echo $jobClass; ?>">
-                                <a data-target="<?php echo $term->slug; ?>" href="#right-exp" class="btn <?php echo $btnClass; ?> <?php echo $jobClass; ?> btn-lg tab-buttons" id="<?php echo $term->slug; ?>">Browse by <?php echo $term->name; ?></a>
+                                <a data-target="<?php echo $term->slug; ?>" href="#right-exp" class="btn <?php echo $btnClass; ?> <?php echo $jobClass; ?> btn-lg tab-buttons" id="<?php echo $term->slug; ?>"><?php _e("Browse by", 'tasc'); ?> <?php echo $term->name; ?></a>
                             </div>
                         <?php } ?>
                     </div>

@@ -11,13 +11,13 @@
 <?php get_template_part('fields/career-advice'); ?>
 
 <div class="recent-job-openings">
-	<h4>Recent job openings</h4>
+	<h4><?php _e("Browse byRecent job openings", 'tasc'); ?></h4>
 	<div class="job-opening-section">
 		<div class="container">	
 			<div class="job-opening-wrap clearfix">
 			 	<main></main>	
 			</div>
-			<!-- <div class="all-jobs"><a href="<?php //echo get_permalink( get_page_by_path('job-openings')); ?>#/jobs" class="btn blue-btn">See all jobs</a></div> -->	
+			<!-- <div class="all-jobs"><a href="<?php //echo get_permalink( get_page_by_path('job-openings')); ?>#/jobs" class="btn blue-btn"><?php _e("See all jobs", 'tasc'); ?></a></div> -->	
 		</div>	
 	</div>
 </div>

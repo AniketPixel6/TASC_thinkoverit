@@ -59,7 +59,7 @@
 
 				<?php if(get_field('testimonial_listing_link')){ ?>
 					<div class="btn blue-btn lower-case">
-						<a href="<?php echo get_field('testimonial_listing_link'); ?>">See All</a>
+						<a href="<?php echo get_field('testimonial_listing_link'); ?>"><?php _e("See All", 'tasc'); ?></a>
 					</div>
 				<?php } ?>  
 

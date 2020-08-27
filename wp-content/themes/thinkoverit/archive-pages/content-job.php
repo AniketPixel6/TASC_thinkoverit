@@ -36,22 +36,22 @@
 		<div class="industry-details-wrapper openings clearfix">
 			<?php if($job_category ){?>
   				<div class="industry-details">
-      				<span>Industry</span>
+      				<span><?php _e("Industry", 'tasc'); ?></span>
       				<?php foreach($job_category as $key=>$category) {?>
 					<span><?php  echo $category->name;?></span>			
 				</div>
 			<?php }} ?>
 			<?php if($employment_type) { ?>
 				<div class="industry-details">
-					<span>Type</span>
+					<span><?php _e("Type", 'tasc'); ?></span>
 					<?php  foreach($employment_type as $key=>$type){  ?>
 						<span><?php echo $type->name; ?></span>
 				</div>
 			<?php }} ?>
 		</div> 
 		<div class="blog-post-date openings clearfix">
-			<p>Added- <span> <?php echo get_the_date(); ?></span></p>
-			<span class="bhi-arrow-right"><u>Read More</u></span>
+			<p><?php _e("Added", 'tasc'); ?>- <span> <?php echo get_the_date(); ?></span></p>
+			<span class="bhi-arrow-right"><u><?php _e("Read More", 'tasc'); ?></u></span>
 		</div>
 	</a>
 </div>	

@@ -18,13 +18,13 @@ $categories = get_terms(array('faq_categories'));
         </div>
         <div class="faq-search">
 			<form action="" method="GET" class="search-form clearfix">
-				<input type="text" name="q" class="search-icon" placeholder="Type keyword to find answers">
+				<input type="text" name="q" class="search-icon" placeholder="<?php _e("Type keyword to find answers", 'tasc'); ?>">
 			</form>
-			<h5 class="faq-subtitle">You can also browse the topics below to find out what you are looking for.</h5>
+			<h5 class="faq-subtitle"><?php _e("You can also browse the topics below to find out what you are looking for.", 'tasc'); ?></h5>
 		</div>
 
         <div class="faq-wrapper clearfix">
-        	<h3>How can we help you?</h3>
+        	<h3><?php _e("How can we help you?", 'tasc'); ?></h3>
 			<div class="faq-cat-wrapper clearfix">
 	            <?php foreach($categories as $key=>$category){ ?>
 	            	<div class="faq-box ">
@@ -51,7 +51,7 @@ $categories = get_terms(array('faq_categories'));
 					  			<li><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title($faq->ID); ?></a></li>	
 					  	<?php } ?>
 					  		</ul>
-						<a class="faq-view-all" href="<?php echo get_term_link($category); ?>">View all questions</a>
+						<a class="faq-view-all" href="<?php echo get_term_link($category); ?>"><?php _e("View all questions", 'tasc'); ?></a>
 					</div>
 	            <?php } ?>
 	        </div>

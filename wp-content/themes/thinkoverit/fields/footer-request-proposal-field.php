@@ -20,14 +20,20 @@
 
 
 ?>
-	<div class="get-in-touch-section retail-get-in-touch">
-		<div class="container retail-proposal">
-			<h3><?php echo get_field('footer_request_text');?> <a href="<?php echo $requst_link; ?>"><?php echo get_field('footer_request_link_text');?></a></h3>
-			<?php if(is_page('work-with-us')){ ?>
-				<a href="mailTo:careers@tascoutsourcing.com" class="btn green-btn"><?php echo get_field('footer_request_button_text');?></a>
-			<?php } else { ?>
-			<a href="<?php echo $button_link;?>" class="btn green-btn"><?php echo get_field('footer_request_button_text');?></a>
-			<?php } ?>
+      <div class="get-in-touch-section retail-get-in-touch">
+		<div class="footer-rfp">
+			<div class="container">
+				<div class="contact-form-section contact-form">
+					<?php echo do_shortcode('[contact-form-7 id="3703" title="Footer RFP"]'); ?>
+				</div>
+			</div>
 		</div>
-	</div>
+       </div>
+
+	<script>
+		document.addEventListener( 'wpcf7mailsent', function( event ) {
+		   location = 'http://tasc.thinkoverit.com//thank-you/';
+		}, false );
+	</script>
+
 <?php } ?>

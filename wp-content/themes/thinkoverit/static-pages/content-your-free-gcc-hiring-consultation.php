@@ -11,7 +11,7 @@
 <div class="contact-section">
 	<div class="container clearfix">
 		<div class="contact-form-section">
-			<h3>Avail your free GCC hiring consultation</h3>
+			<h3><?php _e("Avail your free GCC hiring consultation ", 'tasc'); ?></h3>
 			<?php the_content(); ?>
 		</div>
 		

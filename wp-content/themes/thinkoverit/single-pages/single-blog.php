@@ -63,7 +63,7 @@
 		<?php if($recommended_blogs){ ?>
 			<?php if(!get_field('disable_recommended_blogs') ){ ?>
 				<div class="featured-blog-list recommended_blogs">
-					<h2 class="post-title">Recommended Articles</h2>
+					<h2 class="post-title"><?php _e("Recommended Articles", 'tasc'); ?></h2>
 					<div class="featured-blocks clearfix">
 						<?php foreach($recommended_blogs as $blog){ ?>
 							<?php 

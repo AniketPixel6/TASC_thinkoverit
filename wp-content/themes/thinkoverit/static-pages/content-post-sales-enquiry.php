@@ -63,8 +63,8 @@
 		<?php $banner_img = get_field('diversity_background_image'); ?>
 		<div class="diversity-image" <?php if($banner_img) { ?> style="background-image: url('<?php echo $banner_img; ?>')" <?php } ?>>
 			<ul class="diversity-num">
-				<li><strong>22</strong> <small>Nationalities</small></li>
-				<li><strong>03</strong> <small>Locations</small></li>
+				<li><strong>22</strong> <small><?php _e("Nationalities", 'tasc'); ?></small></li>
+				<li><strong>03</strong> <small><?php _e("Locations", 'tasc'); ?></small></li>
 			</ul>
 		</div>
 	</div>
@@ -86,7 +86,7 @@
 </div>
 <div class="activities-section">
     <div class="container">
-        <h3 class="icon-before csr-icon">CSR Activities</h3>
+        <h3 class="icon-before csr-icon"><?php _e("CSR Activities", 'tasc'); ?></h3>
     </div>
     <div class="activity-inner-wrap">
         <ul class="activities-list clearfix">
@@ -149,7 +149,7 @@
 			<div class="job-opening-wrap clearfix">
 			 	<main></main>	
 			</div>
-			<!-- <div class="all-jobs"><a href="<?php //echo get_permalink( get_page_by_path('job-openings')); ?>#/jobs" class="btn blue-btn">See all jobs</a></div> -->	
+			<!-- <div class="all-jobs"><a href="<?php //echo get_permalink( get_page_by_path('job-openings')); ?>#/jobs" class="btn blue-btn"><?php _e("See all jobs", 'tasc'); ?></a></div> -->	
 		</div>	
 	</div>
 </div>

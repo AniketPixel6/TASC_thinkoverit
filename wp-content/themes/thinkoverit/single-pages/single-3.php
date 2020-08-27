@@ -38,7 +38,7 @@
     						<h4 class="solution-title"><?php echo get_the_title($service); ?></h4>
     					</div>                      
     					<p><?php echo theme_the_excerpt( get_the_excerpt($service), 30); ?></p>
-    					<a href="<?php echo get_permalink($service); ?>" class="btn blue-btn read-more">Read More</a>
+    					<a href="<?php echo get_permalink($service); ?>" class="btn blue-btn read-more"><?php _e("Read More", 'tasc'); ?></a>
     				</div> 
     				<?php } ?>
                 </div>

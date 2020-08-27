@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div class="container">
-			<div class="banner-tagline"><p>404 Not Found</p></div>
+			<div class="banner-tagline"><p><?php _e("404 Not Found", 'tasc'); ?></p></div>
 		</div>
 	</div>
 

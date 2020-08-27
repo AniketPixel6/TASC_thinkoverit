@@ -36,7 +36,7 @@ if($post_type_slug == 'employer-guide'){
 					?>
 					<h4><?php echo $taxonomy->label; ?></h4>
 						<ul class="category-list">
-							<li class="cat-item"><a href="<?php echo home_url($post_type_slug); ?>">All</a></li>	
+							<li class="cat-item"><a href="<?php echo home_url($post_type_slug); ?>"><?php _e("All", 'tasc'); ?></a></li>	
 							<?php foreach($terms as $term){ ?> 
 								<li class="cat-item"><a href="<?php echo get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
 								<!-- <div class="box-thumbnail">

@@ -39,7 +39,7 @@
 
 <div class="csr-section awards-gallery-section">
 	<div class="container clearfix">
-		<h3 class="icon-before geographies-icon center-title">Awards Gallery</h3>
+		<h3 class="icon-before geographies-icon center-title"><?php _e("Awards Gallery", 'tasc'); ?></h3>
 		<div class="grid">
 		<?php 
             $loop = new WP_Query( $args );

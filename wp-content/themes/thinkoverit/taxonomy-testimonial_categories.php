@@ -40,8 +40,8 @@ $loop = new WP_Query( $args );
 					 ?>
 				<?php } wp_reset_postdata(); ?>	
 			</div>
-			<?php custom_pagination($loop->max_num_pages, "", $paged); ?>
 		</div>
+		<?php custom_pagination($loop->max_num_pages, "", $paged); ?>
 	</div>	
 </div>
 <script type="text/javascript">

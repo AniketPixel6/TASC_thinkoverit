@@ -27,7 +27,7 @@
 						<?php } ?>
 					</ul>
 					<?php if(get_field('geographies_listing_link')){ ?>
-						<a href="<?php echo get_field('geographies_listing_link'); ?>" class="btn blue-btn lower-case retail-btn">Learn More</a>
+						<a href="<?php echo get_field('geographies_listing_link'); ?>" class="btn blue-btn lower-case retail-btn"><?php _e("Learn More", 'tasc'); ?></a>
 					<?php } ?>
 				</div>
 			</div>

@@ -21,7 +21,7 @@
 							<div class="list-box">
 								<h4><?php echo get_the_title($child->ID); ?></h4>
 								<p><?php echo theme_the_excerpt( get_the_excerpt($child->ID), 50); ?></p>
-								<span class="btn list-box-btn lower-case">See All</span>
+								<span class="btn list-box-btn lower-case"><?php _e("See All", 'tasc'); ?></span>
 							</div>
 						</a>
 					</li>

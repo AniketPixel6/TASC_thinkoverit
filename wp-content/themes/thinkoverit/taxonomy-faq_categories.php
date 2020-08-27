@@ -13,7 +13,7 @@ $categories = get_terms(array('faq_categories'));
 <div class="faq-section faq-section-new">
 	<div class="container clearfix">
 		<div class="detail-wrap">
-            <h1 class="center-title">How can we help you?</h1>
+            <h1 class="center-title"><?php _e("How can we help you?", 'tasc'); ?></h1>
         </div>	
         <!-- <div class="faq-wrapper">
 			<ul class="faq-cat">
@@ -56,7 +56,7 @@ $categories = get_terms(array('faq_categories'));
 		?>
 		<div class="faq-list-new">
 			<?php if(!$loop->have_posts()){ ?>
-				<h4>No data has been found. </h4>
+				<h4><?php _e("No data has been found.", 'tasc'); ?></h4>
 			<?php } ?>
 			<?php  while ( $loop->have_posts() ) { $loop->the_post(); ?>
 				<!-- <a class="faq-block-link" href="<?php //echo get_permalink(); ?>">
@@ -71,7 +71,7 @@ $categories = get_terms(array('faq_categories'));
 			<?php } wp_reset_postdata(); ?>	
 		</div>
 	</div>
-	<a href="javascript:void(0);" class="scroll-top" id="scroll-top">Scroll Top</a>
+	<a href="javascript:void(0);" class="scroll-top" id="scroll-top"><?php _e("Scroll Top", 'tasc'); ?></a>
 </div>
 <?php
 get_footer();

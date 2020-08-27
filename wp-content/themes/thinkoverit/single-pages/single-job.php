@@ -46,15 +46,15 @@ if($states){
                     		$city="";
                     	}?>
                         <span class="location icon-before"><?php  echo $city;  ?></span> 
-                        <span class="postedon icon-before">Posted On - <strong> <?php echo get_the_date();?></strong></span>
+                        <span class="postedon icon-before"><?php _e("Posted On", 'tasc'); ?> - <strong> <?php echo get_the_date();?></strong></span>
                     </div>
                 </div>  
                 <div class="single-ind-wrapper clearfix">
-                    <h5>Details</h5>
+                    <h5><?php _e("Details", 'tasc'); ?></h5>
                     <div class="single-industry-details-wrap clearfix">
                     	<?php if($job_category){?>
                         <div class="single-industry-details">
-                            <p>Industry</p>
+                            <p><?php _e("Industry", 'tasc'); ?></p>
                             <?php foreach($job_category as $key=>$cat) {
                                 $category =$cat->name;  
                             ?>
@@ -64,7 +64,7 @@ if($states){
                     <?php } ?>
                     <?php if($employment_type){?>
                         <div class="single-industry-details single-type-details">   
-                            <p>Type</p>
+                            <p><?php _e("Type", 'tasc'); ?></p>
                             <?php foreach($employment_type as $key=>$type){ 
                               $emp_type=$type->name;   
                             ?>
@@ -91,7 +91,7 @@ if($states){
     <div class="container clearfix">
     	<?php foreach($job_category as $key=>$relatedcategory) {?>
 							
-    	<h3 class="ng-binding">Related <?php  echo $relatedcategory->name; }?> Jobs</h3>
+    	<h3 class="ng-binding">Related <?php  echo $relatedcategory->name; }?><?php _e("Jobs", 'tasc'); ?> </h3>
 		<?php 
             $terms = get_the_terms( get_the_ID(), 'job_category'); 
             $job_category = get_the_terms( get_the_ID(), 'job_category');
@@ -134,22 +134,22 @@ if($states){
 					<div class="industry-details-wrapper openings clearfix">
 						<?php if($job_category){ ?>
 			  			<div class="industry-details">
-			      			<span>Industry</span>
+			      			<span><?php _e("Industry", 'tasc'); ?></span>
 			      		<?php foreach($job_category as $key=>$relatedcategory) {?>
 							<span><?php  echo $relatedcategory->name;?></span>
 						</div>
 						<?php }} ?>
 						<?php if($employment_type){ ?>
 						<div class="industry-details">
-							<span>Type</span>
+							<span><?php _e("Type", 'tasc'); ?></span>
 						<?php foreach($employment_type as $key=>$type){  ?>
 							<span><?php echo $type->name; ?></span>
 						</div>
 						<?php }} ?>
 					</div> 
 					<div class="blog-post-date openings clearfix">
-						<p>Added- <span> <?php echo get_the_date('F j, Y',$realated->ID); ?></span></p>
-						<span class="bhi-arrow-right"><u>Read More</u></span>
+						<p><?php _e("Added", 'tasc'); ?>- <span> <?php echo get_the_date('F j, Y',$realated->ID); ?></span></p>
+						<span class="bhi-arrow-right"><u><?php _e("Read More", 'tasc'); ?></u></span>
 					</div>
 				</a>
 			</div>
@@ -161,10 +161,9 @@ if($states){
 <!-- Get in touch section start -->
 <div class="get-in-touch-section retail-get-in-touch">
 	<div class="container retail-proposal">
-		<h3>Don't see the Job you want? 
-			<a href="https://www.tascoutsourcing.com/register-cv/#/registercv">Register your CV!</a>
+		<h3><?php _e("Don't see the Job you want?", 'tasc'); ?> <a href="https://www.tascoutsourcing.com/register-cv/#/registercv"><?php _e("Register your CV!", 'tasc'); ?></a>
 		</h3> 
-		<a href="https://www.tascoutsourcing.com/register-cv/#/registercv" class="btn green-btn">Register your CV!</a>
+		<a href="https://www.tascoutsourcing.com/register-cv/#/registercv" class="btn green-btn"><?php _e("Register your CV!", 'tasc'); ?></a>
 	</div>
 
 </div>
@@ -188,7 +187,8 @@ if($states){
   "hiringOrganization" :
   {     
    "@type": "Organization",
-   "name": "Tasc Outsourcing"
+   "name": "Tasc Outsourcing",
+   "logo":"https://www.tascoutsourcing.com/wp-content/themes/thinkoverit/images/tasc-logo.png"
   },
 
  "jobLocation" :[

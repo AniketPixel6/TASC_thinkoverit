@@ -948,7 +948,7 @@ datepicker
 .tasc-footer
 	background-color: #393838
 	color: #ffffff
-	padding: 18px 0 15px 0
+	padding: 18px 0 40px 0
 	font-size: 12px
 	font-family: 'RobotoSlab Light'
 	.footer-block
@@ -1769,6 +1769,16 @@ select
 	position: relative
 	a
 		float: right
+	.field-wrap .textarea-wrap
+		width: 66%
+		height: 48px;
+		float: left
+		margin-bottom: 0px
+	.contact-form .textarea-wrap.message-area textarea
+		height: 48px
+	.field-wrap .checkbox-wrap
+		float: right
+		margin-right: 6px
 	.field-wrap, .textarea-wrap
 		input, textarea, select
 			width: 100%
@@ -1794,7 +1804,7 @@ select
 	margin-bottom: 30px
 	width: 100%
 .field-wrap
-	margin-bottom: 50px
+	margin-bottom: 20px
 	position: relative
 	span.wpcf7-not-valid-tip
 		position: absolute
@@ -1804,6 +1814,12 @@ select
 		float: left
 		width: calc((100% - 30px) / 2)
 		margin-right: 30px
+		&:last-child
+			margin-right: 0
+	.col-3
+		float: left
+		width: calc((100% - 30px) / 3)
+		margin-right: 10px
 		&:last-child
 			margin-right: 0
 	#email

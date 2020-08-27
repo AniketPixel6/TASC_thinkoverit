@@ -27,7 +27,7 @@
 			</div>
 		</div>	
 	</div>
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 	jQuery(window).load(function(){
 		jQuery(function() {  
 	        jQuery('.grid').masonry({
@@ -36,6 +36,6 @@
 	        });
 	    });
 	});
-</script>
+</script> -->
 <?php }?>
 <?php } ?>

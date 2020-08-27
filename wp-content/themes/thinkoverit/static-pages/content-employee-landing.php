@@ -26,7 +26,7 @@
                         <div class="list-box">
                             <h4><?php echo get_the_title(); ?></h4>
                             <div><?php echo theme_the_excerpt( get_the_excerpt(), 50); ?></div>
-                            <a href="<?php echo get_permalink(); ?>" class="btn list-box-btn lower-case">Read More</a>
+                            <a href="<?php echo get_permalink(); ?>" class="btn list-box-btn lower-case"><?php _e("Read More", 'tasc'); ?></a>
                         </div>
                     </a>
                 </li>
@@ -58,7 +58,7 @@
                                 }
                             ?>
                             <div class="browse-<?php echo $term->slug; ?> <?php echo $jobClass; ?>">
-                                <a data-target="<?php echo $term->slug; ?>" href="#right-exp" class="btn <?php echo $btnClass; ?> <?php echo $jobClass; ?> btn-lg tab-buttons" id="<?php echo $term->slug; ?>">Browse by <?php echo $term->name; ?></a>
+                                <a data-target="<?php echo $term->slug; ?>" href="#right-exp" class="btn <?php echo $btnClass; ?> <?php echo $jobClass; ?> btn-lg tab-buttons" id="<?php echo $term->slug; ?>"><?php _e("Browse by", 'tasc'); ?> <?php echo $term->name; ?></a>
                             </div>
                         <?php } ?>
                     </div>

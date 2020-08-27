@@ -155,10 +155,10 @@ add_action( 'widgets_init', 'tasc_widgets_init' );
 function tasc_scripts() {
 	wp_enqueue_style( 'tasc-style', get_stylesheet_uri() );
 
-	wp_enqueue_style('tasc_style_scrollbar', get_bloginfo('stylesheet_directory'). '/css/jquery.mCustomScrollbar.css');
-	wp_enqueue_style('tasc_style_slick', get_bloginfo('stylesheet_directory'). '/css/slick.css');
-	wp_enqueue_style('tasc_style', get_bloginfo('stylesheet_directory'). '/css/style.css?v1.1');
-	//wp_enqueue_style('tasc_style_media', get_bloginfo('stylesheet_directory'). '/css/media.css');
+	wp_enqueue_style('tasc_style_scrollbar', get_bloginfo('stylesheet_directory'). '/css/jquery.mCustomScrollbar.min.css');
+	wp_enqueue_style('tasc_style_slick', get_bloginfo('stylesheet_directory'). '/css/slick.min.css');
+	wp_enqueue_style('tasc_style', get_bloginfo('stylesheet_directory'). '/css/style.css');
+	wp_enqueue_style('tasc_style_media', get_bloginfo('stylesheet_directory'). '/css/media.css');
 	
 
 
@@ -171,7 +171,7 @@ function tasc_scripts() {
 	wp_enqueue_script('tasc_html5', get_bloginfo('stylesheet_directory'). '/js/html5shiv.js', '', '', true);
 	wp_enqueue_script('tasc_script_scrollbar', get_bloginfo('stylesheet_directory'). '/js/jquery.mCustomScrollbar.js', '', '', true);
 	wp_enqueue_script('tasc_script_slick', get_bloginfo('stylesheet_directory'). '/js/slick.min.js', '', '', true);
-	wp_enqueue_script('tasc_script_masonry', get_bloginfo('stylesheet_directory'). '/js/masonry.js', '', '', true);
+	wp_enqueue_script('tasc_script_masonry', get_bloginfo('stylesheet_directory'). '/js/masonry.min.js', '', '', true);
 	wp_enqueue_script('tasc_script_twism', get_bloginfo('stylesheet_directory'). '/js/jquery.twism.js', '', '', true);
 	wp_enqueue_script('tasc_datepicker', get_bloginfo('stylesheet_directory'). '/js/jquery-ui.min.js', '', '', true);
 	wp_enqueue_script('tasc_niceselect', get_bloginfo('stylesheet_directory'). '/js/jquery.nice-select.min.js', '', '', true);
@@ -194,6 +194,16 @@ function tasc_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tasc_scripts' );
+
+function defer_parsing_of_js($url)
+{
+  if (is_admin()) return $url; //don't break WP Admin
+  if (false === strpos($url, '.js')) return $url;
+  if (strpos($url, 'jquery.js')) return $url;
+ 
+  return str_replace(' src', ' defer src', $url);
+}
+add_filter('script_loader_tag', 'defer_parsing_of_js', 10);
 
 function ajax_enqueue() {
     wp_localize_script( 'tasc_script', 'my_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' )));
@@ -351,7 +361,17 @@ function get_youtube_image($url) {
 function cf7_add_attached_file() {
 	global $post;
 	$attache_file = get_field('report_file', $post->ID);
-	return $attache_file;
+  $filetype =  wp_check_filetype( $attache_file ,  $mimes);
+  
+
+  if ($filetype['ext'] == 'm4v') :
+	//return get_template_directory_uri() . '/videotemp.php';
+     return get_post_permalink(  $post->ID );
+  else :
+    return $attache_file;
+  endif;
+
+	// return $attache_file;
 }
 add_shortcode( 'cf7_add_attached_file', 'cf7_add_attached_file' );
 
@@ -534,28 +554,36 @@ add_action( 'bullhorn_cron_jobs_fetch', 'bullhorn_cron_jobs_fetch_function' );
 function removeAllOrphanJobs(){
 
 	$orpahIds = get_posts( array(
-			'post_type'  => 'job',
-		    'meta_query' => array(
-			    array(
-			     'key' => '_bullhorn_job_id',
-			     'compare' => 'NOT EXISTS'
-			    ),
+		'post_type'  => 'job',
+		'meta_query' => array(
+			array(
+				'key' => '_bullhorn_job_id',
+				'compare' => 'NOT EXISTS'
 			),
-			'fields'     => 'ids',
-		));
+		),
+		'fields'     => 'ids',
+	));
+	$oldJobs=get_posts( array(
+		'post_type'  => 'job',
+		'date_query'    => array(
+			'column'  => 'post_date',
+			'before'   => '-60 days'
+		),
+		'fields'     => 'ids',
+	));
 
 	foreach($orpahIds as $id){
 		wp_delete_post($id);
 	}
+	foreach($oldJobs as $id){
+		wp_delete_post($id);
+	}
 }
-
 function bullhorn_cron_jobs_fetch_function(){
 	$count = 20;
 	$startIndex = 0;
 
-
 	removeAllOrphanJobs();
-
 
 	do{
 		$url="https://public-rest22.bullhornstaffing.com/rest-services/1K4U2S/search/JobOrder?query=(isOpen:1)&fields=id,title,dateLastPublished,publicDescription,publishedCategory(id,name),address(city,state,zip,address1),yearsRequired,salary,salaryUnit,dateEnd,employmentType,dateLastPublished,isOpen,isPublic,isDeleted&count=$count&sort=-dateLastPublished&start=".$startIndex;
@@ -586,67 +614,73 @@ function bullhorn_cron_jobs_fetch_function(){
 
 function handleJobs($input, $start){
 	$jobs = $input['data'];
+	$todaysDate = strtotime("today");
+	$expiryDate = strtotime("-60 days",$todaysDate);
 
 	foreach ($jobs as $key=>$job){ 
-		//echo ($start + $key). ". ". $job['title'] ."<br/>";
+	
+		$dateLastPublished = $job['dateLastPublished'] ? floor( $job['dateLastPublished'] / 1000) : $todaysDate;
+	
+		if($dateLastPublished > $expiryDate){
+			$meta_key = '_bullhorn_job_id';
+			$salary= 'salary';
+			$salary_unit= 'salary_unit';
+			$date_end= 'date_end';
+			$experience= 'experience';
+			$zip='zip';
+			$street='streetAddress';
+	
+			$existingIds = get_posts( [
+				'post_type'  => 'job',
+				'meta_key'   => $meta_key,
+				'meta_value' => $job['id'],
+				'fields'     => 'ids',
+			] );
 
-		$meta_key = '_bullhorn_job_id';
-		$salary= 'salary';
-		$salary_unit= 'salary_unit';
-		$date_end= 'date_end';
-		$experience= 'experience';
-		$zip='zip';
-		$street='streetAddress';
+			if(!$existingIds){
+				$postId = wp_insert_post(array (
+					'post_type' => 'job',
+					'post_title' => $job['title'],
+					'post_content' => $job['publicDescription'],
+					'post_status' => 'publish',
+					'comment_status' => 'closed',   // if you prefer
+					'ping_status' => 'closed',      // if you prefer
+					'post_date'     =>  date("Y-m-d H:i:s", $dateLastPublished),
+				));
+				add_post_meta( $postId, $meta_key, $job['id'] );
+				add_post_meta( $postId, $salary, $job['salary'] );
+				add_post_meta( $postId, $salary_unit, $job['salaryUnit'] );
+				add_post_meta( $postId, $date_end, floor($job['dateEnd']/1000) );
+				add_post_meta( $postId, $experience, $job['yearsRequired'] );
+				add_post_meta( $postId, $zip,$job['address']['zip']);
+				add_post_meta( $postId, $street,$job['address']['address1']);
+			}else{
+				$postId = $existingIds[0]; 
 
-		$existingIds = get_posts( [
-			'post_type'  => 'job',
-		    'meta_key'   => $meta_key,
-		    'meta_value' => $job['id'],
-		    'fields'     => 'ids',
-		] );
+				$postId = wp_update_post(array (
+					'ID' => $postId,
+					'post_type' => 'job',
+					'post_title' => $job['title'],
+					'post_content' => $job['publicDescription'],
+					'post_status' => 'publish',
+					'comment_status' => 'closed',   // if you prefer
+					'ping_status' => 'closed',      // if you prefer
+					'post_date'     =>  date("Y-m-d H:i:s", $dateLastPublished),
+				));
+				update_post_meta( $postId, $salary, $job['salary'] );
+				update_post_meta( $postId, $salary_unit, $job['salaryUnit'] );
+				update_post_meta( $postId, $date_end, floor($job['dateEnd']/1000) );
+				update_post_meta( $postId, $experience, $job['yearsRequired'] );
+				update_post_meta( $postId, $zip,$job['address']['zip']);
+				update_post_meta( $postId, $street,$job['address']['address1']);
 
-		if(!$existingIds){
-			$postId = wp_insert_post(array (
-			    'post_type' => 'job',
-			    'post_title' => $job['title'],
-			    'post_content' => $job['publicDescription'],
-			    'post_status' => 'publish',
-			    'comment_status' => 'closed',   // if you prefer
-			    'ping_status' => 'closed',      // if you prefer
-			    'post_date'     =>  date("Y-m-d H:i:s", floor( $job['dateLastPublished'] / 1000)),
-			));
-			add_post_meta( $postId, $meta_key, $job['id'] );
-			add_post_meta( $postId, $salary, $job['salary'] );
-			add_post_meta( $postId, $salary_unit, $job['salaryUnit'] );
-			add_post_meta( $postId, $date_end, floor($job['dateEnd']/1000) );
-			add_post_meta( $postId, $experience, $job['yearsRequired'] );
-			add_post_meta( $postId, $zip,$job['address']['zip']);
-			add_post_meta( $postId, $street,$job['address']['address1']);
-		}else{
-			$postId = $existingIds[0]; 
+			}
 
-			$postId = wp_update_post(array (
-				'ID' => $postId,
-			    'post_type' => 'job',
-			    'post_title' => $job['title'],
-			    'post_content' => $job['publicDescription'],
-			    'post_status' => 'publish',
-			    'comment_status' => 'closed',   // if you prefer
-			    'ping_status' => 'closed',      // if you prefer
-			    'post_date'     =>  date("Y-m-d H:i:s", floor( $job['dateLastPublished'] / 1000)),
-			));
-			update_post_meta( $postId, $salary, $job['salary'] );
-			update_post_meta( $postId, $salary_unit, $job['salaryUnit'] );
-			update_post_meta( $postId, $date_end, floor($job['dateEnd']/1000) );
-			update_post_meta( $postId, $experience, $job['yearsRequired'] );
-			update_post_meta( $postId, $zip,$job['address']['zip']);
-			update_post_meta( $postId, $street,$job['address']['address1']);
-
+			wp_set_post_terms( $postId, array($job['employmentType']), 'employment_type' );
+			wp_set_post_terms( $postId, array($job['address']['state']), 'job_location_state' );
+			wp_set_post_terms( $postId, array($job['address']['city']), 'job_location_city' );
+			wp_set_post_terms( $postId, array($job['publishedCategory']['name']), 'job_category' );
 		}
-
-		wp_set_post_terms( $postId, array($job['employmentType']), 'employment_type' );
-		wp_set_post_terms( $postId, array($job['address']['state']), 'job_location_state' );
-		wp_set_post_terms( $postId, array($job['address']['city']), 'job_location_city' );
-		wp_set_post_terms( $postId, array($job['publishedCategory']['name']), 'job_category' );
 	} 
 }
+

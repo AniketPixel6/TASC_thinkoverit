@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="detail-wrap clearfix">
 			<div class="faq-list-new clearfix">
-				<h1 class="center-title">How can we help you?</h1>
+				<h1 class="center-title"><?php _e("How can we help you?", 'tasc'); ?></h1>
 				<div class="faq-search">
 					<?php get_search_form(); ?>
 				</div>

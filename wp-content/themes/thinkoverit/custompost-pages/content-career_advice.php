@@ -17,16 +17,16 @@
 	<div class="container clearfix">
 		<div class="category-stories-wrapper clearfix">
 			<div class="categories-section">
-				<h4>Categories</h4>
+				<h4><?php _e("Categories", 'tasc'); ?></h4>
 				<div class="category-list-wrap">
 					<div class="category-job-icon icon-before">
 						<form action="" method="GET">
-							<input type="text" name="q" class="search-icon" placeholder="Search">
+							<input type="text" name="q" class="search-icon" placeholder="<?php _e("Search", 'tasc'); ?>">
 						</form>
 					</div>
 					<div class="select-wrap">
 						<ul class="category-list">
-							<li data-id="all" class="cat-item"><a href="javascript:;">All</a></li>
+							<li data-id="all" class="cat-item"><a href="javascript:;"><?php _e("All", 'tasc'); ?></a></li>
 							<?php foreach($categories as $category){ ?> 
 								<li data-id="<?php echo $category->id; ?>" class="cat-item"><a href="<?php echo get_term_link($category); ?>"><?php echo $category->name; ?></a></li>
 							<?php } ?>
@@ -69,7 +69,7 @@
 													<li><?php echo $advice_tag->name; ?></li>
 												<?php } ?>
 											</ul>
-											<span class="read-more"><u>Read More</u></span>
+											<span class="read-more"><u><?php _e("Read More", 'tasc'); ?></u></span>
 										</div>
 									</div>
 								</div>	
